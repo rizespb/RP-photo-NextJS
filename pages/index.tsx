@@ -1,7 +1,11 @@
+import Link from 'next/link'
+import Image from 'next/image'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+
+import styles from '../styles/Home.module.scss'
+
+const a = 0
 
 const Home: NextPage = () => {
   return (

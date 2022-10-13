@@ -10,5 +10,27 @@
   "bracketSpacing": true,
   "jsxBracketSameLine": false,
   "arrowParens": "always",
-  "parser": "typescript"
+  "parser": "typescript",
+  "overrides": [
+    {
+      "files": ["*.js", ".html"],
+      "options": {
+        "parser": "flow"
+      }
+    },
+
+    {
+      "files": "*.ts",
+      "options": {
+        "parser": "typescript"
+      }
+    },
+
+    {
+      "files": ["*.json", "*.jsonc", ".babelrc", ".prettierrc", ".eslintrc"],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
 }
