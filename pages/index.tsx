@@ -5,8 +5,6 @@ import Head from 'next/head'
 
 import styles from '../styles/Home.module.scss'
 
-const a = 0
-
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
