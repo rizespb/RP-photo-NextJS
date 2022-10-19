@@ -3,11 +3,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import styles from '../styles/Home.module.scss'
-
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
+      <h1>Hello</h1>
       <ul>
         <li>1</li>
         <li>2</li>
