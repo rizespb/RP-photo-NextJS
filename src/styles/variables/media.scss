@@ -1,0 +1,22 @@
+$breakpoints-map: (
+  xs: (
+    0,
+    479px,
+  ),
+  sm: (
+    480px,
+    670px,
+  ),
+  md: (
+    671px,
+    960px,
+  ),
+  lg: (
+    961px,
+    1280px,
+  ),
+  xl: (
+    1281px,
+    infinite,
+  ),
+);

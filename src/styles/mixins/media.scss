@@ -1,0 +1,45 @@
+/* Прописывает @media внутри селектора */
+/*
+Требует $breakpoints-map массив из разрешений). Если указать 2 значения, то будет диапазон. Если прописать respond-to(,md), то будет диапазон 0-md.
+Пример:
+.someclass {
+  color: white;
+  @include respond-to(xs) {
+    color: tomato;
+  }
+}
+*/
+@mixin respond-to($breakpoint-start: null, $breakpoint-end: null) {
+  @if map-has-key($breakpoints-map, $breakpoint-start) and map-has-key($breakpoints-map, $breakpoint-end) {
+    $breakpoint-start-widths: map-get($breakpoints-map, $breakpoint-start);
+    $breakpoint-end-widths: map-get($breakpoints-map, $breakpoint-end);
+    $min-width: nth($breakpoint-start-widths, 1);
+    $max-width: nth($breakpoint-end-widths, 2);
+
+    @if $max-width == infinite {
+      @media (min-width: #{$min-width}) {
+        @content;
+      }
+    } @else {
+      @media (min-width: #{$min-width}) and (max-width: #{$max-width}) {
+        @content;
+      }
+    }
+  } @else if map-has-key($breakpoints-map, $breakpoint-start) {
+    $breakpoint-start-widths: map-get($breakpoints-map, $breakpoint-start);
+    $min-width: nth($breakpoint-start-widths, 1);
+
+    @media (min-width: #{$min-width}) {
+      @content;
+    }
+  } @else if map-has-key($breakpoints-map, $breakpoint-end) {
+    $breakpoint-end-widths: map-get($breakpoints-map, $breakpoint-end);
+    $end-width: nth($breakpoint-end-widths, 2);
+
+    @media (min-width: 0) and (max-width: #{$end-width}) {
+      @content;
+    }
+  } @else {
+    @error 'Ошибка в миксине respond-to(). Вероятно не заполнены значения.';
+  }
+}

@@ -1,0 +1,42 @@
+@import '/src/styles/variables/layout.scss';
+@import '/src/styles/variables/text.scss';
+
+.container {
+	display: block;
+}
+
+.menu {
+	border: 1px solid blue;
+	position: fixed;
+	top:0;
+	bottom: 0;
+
+	display: flex;
+	flex-direction: column;
+
+	width: $menu-width;
+	padding: 40px 10px 40px 30px;
+	
+	z-index: 10000;
+}
+
+.title, .subtitle {
+	font-family: $font-display;
+	font-weight: 500;
+}
+
+.title{
+	margin-bottom: 70px;
+
+	
+	
+	font-size: 40px;
+}
+
+.subtitle {
+	margin-bottom: 70px;
+}
+
+.content {
+	margin-left: $menu-width;
+}
