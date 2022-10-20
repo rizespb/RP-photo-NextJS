@@ -1,42 +1,49 @@
 @import '/src/styles/variables/layout.scss';
 @import '/src/styles/variables/text.scss';
+@import '/src/styles/variables/colors.scss';
 
 .container {
-	display: block;
+  display: block;
 }
 
 .menu {
-	border: 1px solid blue;
-	position: fixed;
-	top:0;
-	bottom: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
 
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	width: $menu-width;
-	padding: 40px 10px 40px 30px;
-	
-	z-index: 10000;
+  width: $menu-width;
+  padding: 40px 10px 40px 30px;
+
+  z-index: 10000;
 }
 
-.title, .subtitle {
-	font-family: $font-display;
-	font-weight: 500;
+.logo {
+  display: flex;
+  flex-direction: column;
 }
 
-.title{
-	margin-bottom: 70px;
+.title,
+.subtitle {
+  font-family: $font-display;
+  font-weight: 500;
+}
 
-	
-	
-	font-size: 40px;
+.title {
+  margin-bottom: 10px;
+
+  font-size: 40px;
 }
 
 .subtitle {
-	margin-bottom: 70px;
+  font-size: 25px;
 }
 
 .content {
-	margin-left: $menu-width;
+  margin-left: $menu-width;
+  padding: 50px;
+
+  background-color: $colog-bg-primary;
 }

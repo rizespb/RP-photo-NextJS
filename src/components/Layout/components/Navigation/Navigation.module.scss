@@ -1,0 +1,37 @@
+@import '/src/styles/variables/text.scss';
+
+$gap: 20px;
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  row-gap: $gap;
+}
+
+.navigation {
+  flex: 1;
+
+  font-family: $font-display;
+  font-size: 22px;
+
+  &__list {
+    @extend .flex-column;
+  }
+
+  :global(.ReactCollapse--collapse) {
+    transition: height 500ms;
+  }
+}
+
+.navItem {
+  cursor: pointer;
+}
+
+.subNavigation {
+  &__list {
+    margin-left: $gap;
+    padding-top: $gap;
+
+    @extend .flex-column;
+  }
+}
