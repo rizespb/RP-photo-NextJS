@@ -4,7 +4,8 @@
     "paths": {
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@components": ["components/index"]
     },
     /* Visit https://aka.ms/tsconfig to read more about this file */
 

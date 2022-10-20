@@ -10,7 +10,6 @@
   "bracketSpacing": true,
   "jsxBracketSameLine": false,
   "arrowParens": "always",
-  "parser": "typescript",
   "overrides": [
     {
       "files": ["*.js", ".html"],

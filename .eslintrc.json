@@ -34,6 +34,7 @@
     "max-len": [0, 120, 2, { "ignoreUrls": true }],
     "prettier/prettier": "error",
     "@typescript-eslint/no-non-null-assertion": "warn",
+    "@typescript-eslint/no-empty-interface": "off",
     "import/order": [
       "error",
       {
