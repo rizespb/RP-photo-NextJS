@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { FC, useState } from 'react'
 import { Collapse } from 'react-collapse'
 
@@ -19,7 +20,9 @@ const NavItem: FC<TNavItemProps> = (props) => {
       ) : (
         link && (
           <li className={styles.navItem}>
-            <Link link={link}>{title}</Link>
+            <Link link={link} className={styles.navItem__link}>
+              {title}
+            </Link>
           </li>
         )
       )}
@@ -34,7 +37,7 @@ const CollapsableItem: FC<TCollapsableItemProps> = (props) => {
 
   return (
     <li className={styles.navItem}>
-      <span onClick={() => setIsOpen(!isOpen)}>{title}</span>
+      <span onClick={() => setIsOpen(!isOpen)}>{title}!!!</span>
 
       <Collapse isOpened={isOpen}>
         <ul className={styles.subNavigation__list}>
@@ -49,11 +52,15 @@ const CollapsableItem: FC<TCollapsableItemProps> = (props) => {
 
 const Navigation: FC = () => (
   <nav className={styles.navigation}>
+    <div className={classNames(styles.shadow, styles.shadow__top)} key="shadow-top" />
+
     <ul className={styles.navigation__list}>
       {navItems.map((navItem) => (
         <NavItem link={navItem.link} subItems={navItem.subItems} title={navItem.title} key={navItem.id} />
       ))}
     </ul>
+
+    <div className={classNames(styles.shadow, styles.shadow__bottom)} key="shadow-bottom" />
   </nav>
 )
 

@@ -15,7 +15,10 @@
   flex-direction: column;
 
   width: $menu-width;
-  padding: 40px 10px 40px 30px;
+  height: 100vh;
+  padding: 40px 10px 0 40px;
+
+  overflow: hidden;
 
   z-index: 10000;
 }
