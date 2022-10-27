@@ -3,4 +3,7 @@ export const enum EIcons {
   Phone = 'phone',
   Email = 'email',
   ArrowRight = 'arrowRight',
+  ArrowLeft = 'arrowLeft',
+  ArrowDown = 'arrowDown',
+  ArrowUp = 'arrowUp',
 }

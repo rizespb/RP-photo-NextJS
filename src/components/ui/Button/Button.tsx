@@ -14,7 +14,7 @@ const Button: FC<IButtonProps> = (props) => {
     <button {...rest} className={classNames(styles.button, className)}>
       {text}
 
-      {icon && <Icon size="small" name={EIcons.ArrowRight} />}
+      {icon && <Icon size="small" name={icon} />}
     </button>
   )
 }
