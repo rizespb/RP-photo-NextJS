@@ -1,5 +1,18 @@
 .icon {
   display: inline-block;
-  width: 32px;
-  height: 32px;
+
+  &__small {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__medium {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__large {
+    width: 64px;
+    height: 64px;
+  }
 }

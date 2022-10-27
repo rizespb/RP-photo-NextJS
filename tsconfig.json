@@ -5,8 +5,8 @@
       "@assets/*": ["assets/*"],
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
-      "@components/*": ["components/*"],
       "@components": ["components/index"],
+      "@components/*": ["components/*"],
       "@constants": ["constants/index"],
       "@ui": ["components/ui/index"],
       "@types": ["types/index"]

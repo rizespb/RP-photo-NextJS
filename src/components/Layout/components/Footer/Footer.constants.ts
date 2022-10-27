@@ -1,5 +1,4 @@
-import { envVars } from '@constants'
-import { EIcons } from '@types'
+import { EIcons, envVars } from '@constants'
 
 export const contactsData = [
   { id: 0, link: `mailto:${envVars.EMAIL}`, text: envVars.EMAIL, type: EIcons.Email },
