@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 50px;
+
+  &__text {
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 35px;
+  }
+
+  &__description {
+    display: block;
+    margin-top: 15px;
+  }
+}
