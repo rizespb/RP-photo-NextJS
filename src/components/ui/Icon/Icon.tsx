@@ -5,7 +5,7 @@ import { iconsMap } from './Icon.constant'
 import styles from './Icon.module.scss'
 import { IIconProps } from './Icon.types'
 
-const Icon: FC<IIconProps> = ({ name, size = 'medium' }) => {
+const Icon: FC<IIconProps> = ({ className = '', name, size = 'medium' }) => {
   const IconSvg = iconsMap[name]
 
   const iconClasses = classNames({
@@ -13,6 +13,7 @@ const Icon: FC<IIconProps> = ({ name, size = 'medium' }) => {
     [styles.icon__small]: size === 'small',
     [styles.icon__medium]: size === 'medium',
     [styles.icon__large]: size === 'large',
+    className: true,
   })
 
   return (

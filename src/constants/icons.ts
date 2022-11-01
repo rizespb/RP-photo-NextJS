@@ -6,4 +6,6 @@ export const enum EIcons {
   ArrowLeft = 'arrowLeft',
   ArrowDown = 'arrowDown',
   ArrowUp = 'arrowUp',
+  Message = 'message',
+  Feather = 'feather',
 }

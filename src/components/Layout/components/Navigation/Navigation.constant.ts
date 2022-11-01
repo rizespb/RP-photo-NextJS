@@ -29,8 +29,8 @@ export const navItems: INavItem[] = [
   },
   {
     id: 2,
-    link: '/menu2',
-    title: 'Меню 2',
+    link: '/review',
+    title: 'Отзывы',
   },
   {
     id: 3,

@@ -9,6 +9,7 @@
       "@components/*": ["components/*"],
       "@constants": ["constants/index"],
       "@ui": ["components/ui/index"],
+      "@data": ["data/index"],
       "@types": ["types/index"]
     },
     /* Visit https://aka.ms/tsconfig to read more about this file */
