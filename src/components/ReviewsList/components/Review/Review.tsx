@@ -30,7 +30,7 @@ const Review: FC<IReviewProps> = (props) => {
       </div>
 
       <div className={styles.imageWrapper}>
-        <Image fill={true} src={image} alt={author} className={styles.image} />
+        <Image fill={true} src={image} alt={author} className={styles.image} sizes="100%" priority={true} />
       </div>
     </article>
   )
