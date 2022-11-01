@@ -11,7 +11,7 @@ const Link: FC<ILinkProps> = (props) => {
       {children}
     </a>
   ) : (
-    <NextLink href={link}>
+    <NextLink href={link} legacyBehavior={true}>
       <a className={className} onClick={onClick}>
         {children}
       </a>
