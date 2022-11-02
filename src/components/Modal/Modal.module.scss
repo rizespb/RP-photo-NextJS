@@ -1,0 +1,37 @@
+@import '/src/styles/mixins/filter.scss';
+@import '/src/styles/variables/colors.scss';
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+
+  z-index: 1000;
+  background-color: $color-modal-container-bg;
+
+  @include blur(2px);
+}
+
+.modal {
+  position: relative;
+  padding: 70px 50px;
+  width: 650px;
+
+  background-color: $color-modal-bg;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  cursor: pointer;
+}

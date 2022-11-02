@@ -8,4 +8,5 @@ export const enum EIcons {
   ArrowUp = 'arrowUp',
   Message = 'message',
   Feather = 'feather',
+  Close = 'close',
 }

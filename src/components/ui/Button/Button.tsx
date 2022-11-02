@@ -1,8 +1,6 @@
 import classNames from 'classnames'
 import { FC } from 'react'
 
-import { EIcons } from '@constants'
-
 import Icon from '../Icon'
 import styles from './Button.module.scss'
 import { IButtonProps } from './Button.types'

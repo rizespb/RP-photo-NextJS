@@ -4,4 +4,5 @@ export interface IIconProps {
   name: EIcons
   size?: 'small' | 'medium' | 'large'
   className?: string
+  onClick?: () => void
 }

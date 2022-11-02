@@ -1,14 +1,14 @@
 import type { NextPage } from 'next'
-import { useState } from 'react'
 
-import { Header, ReviewsList } from '@components'
+import { Header, Modal, ReviewsList } from '@components'
 import { EIcons } from '@constants'
+import { useComponentVisible } from 'hooks'
 
 const ReviewPage: NextPage = () => {
-  const [isModalVisible, setIsModalVisible] = useState<boolean>(false)
+  const { isComponentVisible, ref, setIsComponentVisible } = useComponentVisible<HTMLDivElement>(false)
 
   const handleButtonClick = () => {
-    setIsModalVisible(!isModalVisible)
+    setIsComponentVisible(!isComponentVisible)
   }
 
   return (
@@ -22,6 +22,12 @@ const ReviewPage: NextPage = () => {
       />
 
       <ReviewsList />
+
+      {isComponentVisible && (
+        <Modal close={() => setIsComponentVisible(false)} ref={ref}>
+          Please add review here. We need more reviews! A-ha-ha-ha-ha-haha-ha-ha-ha-haha-ha-ha-ha-ha!
+        </Modal>
+      )}
     </div>
   )
 }
