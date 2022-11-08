@@ -34,4 +34,9 @@
   right: 20px;
 
   cursor: pointer;
+
+  &:hover,
+  &:active {
+    opacity: 0.6;
+  }
 }
