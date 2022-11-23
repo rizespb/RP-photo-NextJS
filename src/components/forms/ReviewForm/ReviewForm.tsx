@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import React, { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 
-import { Button, Input } from '@components/ui'
+import { Button, Input, TextArea } from '@components/ui'
 
 import styles from './ReviewForm.module.scss'
 import { reviewFormValidationSchema } from './ReviewForm.schema'
@@ -39,6 +39,16 @@ const ReviewForm: FC<IReviewFormProps> = ({ onSubmit }) => {
           const { error } = fieldState
 
           return <Input {...field} type="text" labelText="Email" error={error?.message} />
+        }}
+      />
+
+      <Controller
+        name="reviewMessage"
+        control={control}
+        render={({ field, fieldState }) => {
+          const { error } = fieldState
+
+          return <TextArea {...field} labelText="Ваше сообщение" error={error?.message} />
         }}
       />
 

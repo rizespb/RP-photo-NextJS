@@ -3,30 +3,30 @@ import { FocusEventHandler, forwardRef, useImperativeHandle, useRef, useState } 
 
 import { TLabelPosition } from '@types'
 
-import styles from './Input.module.scss'
-import { IInputProps } from './Input.types'
+import styles from './TextArea.module.scss'
+import { ITextAreaProps } from './TextArea.types'
 
-const Input = forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
-  const { className, error, labelText, onBlur, onFocus, value = '', ...rest } = props
+const TextArea = forwardRef<HTMLTextAreaElement, ITextAreaProps>((props, ref) => {
+  const { className, error, labelText, onBlur, onFocus, rows = 5, value = '', ...rest } = props
 
   const [labelPosition, setLabelPosition] = useState<TLabelPosition>(() => (value ? 'top' : 'centered'))
 
-  const inputRef = useRef<HTMLInputElement>(null)
+  const textAreaRef = useRef<HTMLTextAreaElement>(null)
 
-  useImperativeHandle(ref, () => inputRef.current as HTMLInputElement)
+  useImperativeHandle(ref, () => textAreaRef.current as HTMLTextAreaElement)
 
-  const handleFocus: FocusEventHandler<HTMLInputElement> = (event): void => {
+  const handleFocus: FocusEventHandler<HTMLTextAreaElement> = (event): void => {
     setLabelPosition('top')
     onFocus && onFocus(event)
   }
 
-  const handleBlur: FocusEventHandler<HTMLInputElement> = (event): void => {
+  const handleBlur: FocusEventHandler<HTMLTextAreaElement> = (event): void => {
     !value && setLabelPosition('centered')
     onBlur && onBlur(event)
   }
 
   const hadleLabelClick = () => {
-    inputRef.current?.focus()
+    textAreaRef.current?.focus()
   }
 
   const labelTextClasses = classNames({
@@ -36,22 +36,23 @@ const Input = forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
     [styles['labelText--error']]: !!error,
   })
 
-  const inputClasses = classNames({
-    [styles.input]: true,
-    [styles['input--error']]: !!error,
+  const textAreaClasses = classNames({
+    [styles.textArea]: true,
+    [styles['textArea--error']]: !!error,
   })
 
   return (
     <fieldset className={styles.wrapper}>
       {labelText && (
         <label className={styles.label} onClick={hadleLabelClick}>
-          <input
+          <textarea
             {...rest}
-            className={classNames(inputClasses, className)}
+            className={classNames(textAreaClasses, className)}
             onFocus={handleFocus}
             onBlur={handleBlur}
             value={value}
-            ref={inputRef}
+            ref={textAreaRef}
+            rows={rows}
           />
           <span className={labelTextClasses}>{labelText}</span>
         </label>
@@ -62,6 +63,6 @@ const Input = forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
   )
 })
 
-Input.displayName = 'Input'
+TextArea.displayName = 'TextArea'
 
-export default Input
+export default TextArea
