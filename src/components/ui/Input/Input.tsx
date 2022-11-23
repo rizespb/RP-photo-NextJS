@@ -1,11 +1,11 @@
 import classNames from 'classnames'
-import { FC, FocusEventHandler, forwardRef, useImperativeHandle, useRef, useState } from 'react'
+import { FocusEventHandler, forwardRef, useImperativeHandle, useRef, useState } from 'react'
 
 import styles from './Input.module.scss'
 import { IInputProps, TLabelPosition } from './Input.types'
 
 const Input = forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
-  const { className, labelText, onBlur, onFocus, value = '', ...rest } = props
+  const { className, error, labelText, onBlur, onFocus, value = '', ...rest } = props
 
   const [labelPosition, setLabelPosition] = useState<TLabelPosition>(() => (value ? 'top' : 'centered'))
 
@@ -27,27 +27,35 @@ const Input = forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
     inputRef.current?.focus()
   }
 
-  const labelClasses = classNames({
-    [styles.label]: true,
-    [styles['label--top']]: labelPosition === 'top',
-    [styles['label--centered']]: labelPosition === 'centered',
+  const labelTextClasses = classNames({
+    [styles.labelText]: true,
+    [styles['labelText--top']]: labelPosition === 'top',
+    [styles['labelText--centered']]: labelPosition === 'centered',
+    [styles['labelText--error']]: !!error,
+  })
+
+  const inputClasses = classNames({
+    [styles.input]: true,
+    [styles['input--error']]: !!error,
   })
 
   return (
     <fieldset className={styles.wrapper}>
-      <input
-        {...rest}
-        className={classNames(styles.input, className)}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        value={value}
-        ref={inputRef}
-      />
       {labelText && (
-        <label className={labelClasses} onClick={hadleLabelClick}>
-          {labelText}
+        <label className={styles.label} onClick={hadleLabelClick}>
+          <input
+            {...rest}
+            className={classNames(inputClasses, className)}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            value={value}
+            ref={inputRef}
+          />
+          <span className={labelTextClasses}>{labelText}</span>
         </label>
       )}
+
+      {error && <span className={styles.error}>{error}</span>}
     </fieldset>
   )
 })

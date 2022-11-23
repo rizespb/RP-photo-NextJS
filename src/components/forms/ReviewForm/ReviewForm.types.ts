@@ -1,5 +1,5 @@
-import { FormEvent } from 'react'
+import { FieldValues } from 'react-hook-form'
 
 export interface IReviewFormProps {
-  onSubmit: (event: FormEvent) => void
+  onSubmit: (event: FieldValues) => void
 }

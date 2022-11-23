@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { FormEvent } from 'react'
+import { FieldValues } from 'react-hook-form'
 
 import { Header, Modal, ReviewsList } from '@components'
 import { ReviewForm } from '@components/forms'
@@ -9,8 +9,13 @@ import { useComponentVisible } from 'hooks'
 const ReviewPage: NextPage = () => {
   const { isComponentVisible, ref, setIsComponentVisible } = useComponentVisible<HTMLDivElement>(false)
 
-  const handleButtonClick = () => {
+  const handleAddReviewClick = () => {
     setIsComponentVisible(!isComponentVisible)
+  }
+
+  const handleFormSubmit = (event: FieldValues): void => {
+    console.log('Form submitted!')
+    console.log('event', event)
   }
 
   return (
@@ -19,7 +24,7 @@ const ReviewPage: NextPage = () => {
         title="Отзывы"
         description="Отзывы довольных клиентов"
         buttonText="Оставить отзыв&nbsp;"
-        onButtonClick={handleButtonClick}
+        onButtonClick={handleAddReviewClick}
         buttonIcon={EIcons.Message}
       />
 
@@ -27,12 +32,7 @@ const ReviewPage: NextPage = () => {
 
       {isComponentVisible && (
         <Modal close={() => setIsComponentVisible(false)} ref={ref}>
-          <ReviewForm
-            onSubmit={(event: FormEvent) => {
-              console.log('Form submitted!')
-              console.log('event')
-            }}
-          />
+          <ReviewForm onSubmit={handleFormSubmit} />
         </Modal>
       )}
     </div>
