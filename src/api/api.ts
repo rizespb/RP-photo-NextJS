@@ -2,8 +2,9 @@ import { send } from '@emailjs/browser'
 import { FieldValues } from 'react-hook-form'
 
 import { envVars } from '@constants'
+import { ERequestStatus } from '@types'
 
-import { ERequestStatus, ISendReviewResponse } from './api.types'
+import { ISendReviewResponse } from './api.types'
 
 class Api {
   static sendReview = async (values: FieldValues, token: string): Promise<ISendReviewResponse> => {

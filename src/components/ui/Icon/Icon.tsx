@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import { iconsMap } from './Icon.constant'
 import styles from './Icon.module.scss'

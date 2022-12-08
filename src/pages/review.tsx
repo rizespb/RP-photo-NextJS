@@ -12,6 +12,8 @@ const ReviewPage: NextPage = () => {
     setIsComponentVisible(!isComponentVisible)
   }
 
+  const closeModal = (): void => setIsComponentVisible(false)
+
   return (
     <div>
       <Header
@@ -25,8 +27,8 @@ const ReviewPage: NextPage = () => {
       <ReviewsList />
 
       {isComponentVisible && (
-        <Modal close={() => setIsComponentVisible(false)} ref={ref}>
-          <ReviewForm />
+        <Modal close={closeModal} ref={ref}>
+          <ReviewForm closeModal={closeModal} />
         </Modal>
       )}
     </div>

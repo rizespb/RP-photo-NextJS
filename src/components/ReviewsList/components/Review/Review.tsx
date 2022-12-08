@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import Image from 'next/image'
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import { Icon } from '@components/ui'
 import { EIcons } from '@constants'

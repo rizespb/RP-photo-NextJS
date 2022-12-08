@@ -1,7 +1,4 @@
-export const enum ERequestStatus {
-  Success = 'success',
-  Error = 'error',
-}
+import { ERequestStatus } from '@types'
 
 export interface ISendReviewResponse {
   status: ERequestStatus
