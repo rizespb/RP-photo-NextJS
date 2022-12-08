@@ -4,7 +4,7 @@ const nextConfig = {
     domains: ['images.unsplash.com'],
   },
 
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   // Для импорта SVG
   webpack(config) {
