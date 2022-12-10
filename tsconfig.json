@@ -4,6 +4,7 @@
     "paths": {
       "@assets/*": ["assets/*"],
       "@pages/*": ["pages/*"],
+      "@pageComponents": ["pageComponents/index"],
       "@styles/*": ["styles/*"],
       "@components": ["components/index"],
       "@components/*": ["components/*"],

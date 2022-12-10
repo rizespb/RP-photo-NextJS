@@ -4,12 +4,11 @@ import ReCaptcha from 'react-google-recaptcha'
 import { Controller, FieldValues, useForm } from 'react-hook-form'
 
 import { Api } from '@api'
+import { Loader, StatusScreen } from '@components'
 import { Button, Input, TextArea } from '@components/ui'
 import { envVars } from '@constants'
 import { ERequestStatus } from '@types'
 
-import Loader from '../../Loader'
-import StatusScreen from '../../StatusScreen'
 import { TEXTS } from './constants'
 import styles from './ReviewForm.module.scss'
 import { reviewFormValidationSchema } from './ReviewForm.schema'

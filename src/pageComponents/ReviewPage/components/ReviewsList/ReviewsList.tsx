@@ -1,6 +1,6 @@
 import { reviewsData } from '@data'
 
-import Review from './components/Review/Review'
+import Review from '../Review'
 import styles from './ReviewsList.module.scss'
 
 const ReviewsList = () => {
