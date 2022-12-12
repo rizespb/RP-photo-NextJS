@@ -22,7 +22,7 @@ const MainPage = () => {
         <SwiperSlide
           key={id}
           style={{
-            height: '90vh',
+            height: '100vh',
           }}
         >
           <Image

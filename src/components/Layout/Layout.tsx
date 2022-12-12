@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { FC } from 'react'
 
 import { Link } from '@components'
@@ -7,7 +8,12 @@ import Navigation from './components/Navigation'
 import styles from './Layout.module.scss'
 import { ILayoutProps } from './Layout.types'
 
-const Layout: FC<ILayoutProps> = ({ children }) => {
+const Layout: FC<ILayoutProps> = ({ children, withPaddings = true }) => {
+  const rightClasses = classNames({
+    [styles.right]: true,
+    [styles['right--paddings']]: withPaddings,
+  })
+
   return (
     <div className={styles.container}>
       <aside className={styles.left}>
@@ -19,7 +25,7 @@ const Layout: FC<ILayoutProps> = ({ children }) => {
         <Navigation />
       </aside>
 
-      <div className={styles.right}>
+      <div className={rightClasses}>
         <main className={styles.content}>{children}</main>
 
         <Footer />

@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
+import { Layout } from '@components'
 import { ReviewPage } from '@pageComponents'
 
 const Review: NextPage = () => (
@@ -9,7 +10,9 @@ const Review: NextPage = () => (
       <title>Отзывы</title>
     </Head>
 
-    <ReviewPage />
+    <Layout>
+      <ReviewPage />
+    </Layout>
   </>
 )
 
