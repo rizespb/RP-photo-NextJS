@@ -1,4 +1,5 @@
 @import '/src/styles/variables/text.scss';
+@import '/src/styles/variables/common.scss';
 
 .button {
   display: flex;
@@ -14,11 +15,11 @@
 
   &:hover,
   &:active {
-    opacity: 0.6;
+    opacity: $icons-opacity;
   }
 
   &:disabled {
-    opacity: 0.6;
+    opacity: $icons-opacity;
     cursor: default;
   }
 }
