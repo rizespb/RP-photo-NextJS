@@ -1,4 +1,6 @@
-export const sliderPhotos = [
+import { IPhoto } from '@types'
+
+export const sliderPhotos: IPhoto[] = [
   {
     id: 0,
     link: '/images/main-page-slider/0.jpg',

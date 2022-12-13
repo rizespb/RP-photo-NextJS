@@ -44,6 +44,7 @@ const MainPage = () => {
         }
       }}
       pagination={{ clickable: true }}
+      className={styles.slider}
     >
       {sliderPhotos.map(({ id, link }) => (
         <SwiperSlide key={id} className={styles.slide}>

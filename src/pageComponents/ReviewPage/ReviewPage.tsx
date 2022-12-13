@@ -5,6 +5,7 @@ import { EIcons } from '@constants'
 import { useComponentVisible } from '@hooks'
 
 import { ReviewForm, ReviewsList } from './components'
+import { TEXTS } from './constants'
 
 const ReviewPage: FC = () => {
   const { isComponentVisible, ref, setIsComponentVisible } = useComponentVisible<HTMLDivElement>(false)
@@ -18,9 +19,9 @@ const ReviewPage: FC = () => {
   return (
     <div>
       <Header
-        title="Отзывы"
-        description="Отзывы довольных клиентов"
-        buttonText="Оставить отзыв&nbsp;"
+        title={TEXTS.headerTitle}
+        description={TEXTS.headerDescription}
+        buttonText={TEXTS.headerButtonText}
         onButtonClick={handleAddReviewClick}
         buttonIcon={EIcons.Message}
       />

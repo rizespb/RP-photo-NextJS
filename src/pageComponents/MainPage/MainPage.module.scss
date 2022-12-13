@@ -1,11 +1,24 @@
 $arrowOffset: 30px;
 
+.slider {
+  animation: 1.5s show ease;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .slide {
   height: 100vh;
 }
 
 .slideImage {
-  object-fit: 'cover';
+  object-fit: cover;
 }
 
 .arrowIcon {
