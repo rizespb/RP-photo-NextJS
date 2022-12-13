@@ -5,7 +5,7 @@ import { Header } from '@components'
 import { EIcons } from '@constants'
 import { IPhoto } from '@types'
 
-import styles from './GalleryPage.module.scss'
+import Gallery from './Gallery'
 
 const photos: IPhoto[] = [
   { id: 0, link: '/images/gallery/0.jpg' },
@@ -19,7 +19,7 @@ const photos: IPhoto[] = [
   { id: 8, link: '/images/gallery/8.jpg' },
   { id: 9, link: '/images/gallery/9.jpg' },
   { id: 10, link: '/images/gallery/10.jpg' },
-  { id: 11, link: '/images/gallery/11jpg' },
+  { id: 11, link: '/images/gallery/11.jpg' },
   { id: 12, link: '/images/gallery/12.jpg' },
   { id: 13, link: '/images/gallery/13.jpg' },
   { id: 14, link: '/images/gallery/14.jpg' },
@@ -35,7 +35,7 @@ const GalleryPage: FC = () => {
   }
 
   return (
-    <div>
+    <>
       <Header
         title="Галереря фото"
         description="Какое-то описание галереии"
@@ -43,8 +43,9 @@ const GalleryPage: FC = () => {
         onButtonClick={handleBackButtonClick}
         buttonIcon={EIcons.ArrowRight}
       />
-      <div className={styles.gallery}></div>
-    </div>
+
+      <Gallery photos={photos} />
+    </>
   )
 }
 

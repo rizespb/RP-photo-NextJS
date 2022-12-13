@@ -17,7 +17,7 @@ const ReviewPage: FC = () => {
   const closeModal = (): void => setIsComponentVisible(false)
 
   return (
-    <div>
+    <>
       <Header
         title={TEXTS.headerTitle}
         description={TEXTS.headerDescription}
@@ -33,7 +33,7 @@ const ReviewPage: FC = () => {
           <ReviewForm closeModal={closeModal} />
         </Modal>
       )}
-    </div>
+    </>
   )
 }
 
