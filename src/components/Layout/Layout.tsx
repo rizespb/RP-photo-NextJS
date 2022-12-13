@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import { FC } from 'react'
 
 import { Link } from '@components'
+import { RIGHT_SIDE_MODAL_DIV_ID } from '@constants'
 
 import Footer from './components/Footer'
 import Navigation from './components/Navigation'
@@ -29,6 +30,8 @@ const Layout: FC<ILayoutProps> = ({ children, withPaddings = true }) => {
         <main className={styles.content}>{children}</main>
 
         <Footer />
+
+        <div id={RIGHT_SIDE_MODAL_DIV_ID}></div>
       </div>
     </div>
   )

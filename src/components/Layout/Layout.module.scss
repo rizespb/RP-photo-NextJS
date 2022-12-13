@@ -46,6 +46,7 @@
 }
 
 .right {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-left: $menu-width;

@@ -1,18 +1,17 @@
 @import '/src/styles/mixins/filter.scss';
 @import '/src/styles/variables/colors.scss';
 @import '/src/styles/variables/common.scss';
+@import '/src/styles/variables/layout.scss';
 
 .container {
   position: fixed;
   top: 0;
-  left: 0;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   padding: 10px;
 
   overflow-y: scroll;
@@ -22,14 +21,27 @@
   z-index: 1000;
 
   @include blur(2px);
+
+  &--fullscreen {
+    left: 0;
+    width: 100vw;
+  }
+
+  &--rightSide {
+    left: $menu-width;
+    width: calc(100vw - $menu-width);
+  }
 }
 
 .modal {
   position: relative;
-  padding: 70px 50px 50px;
-  width: 650px;
 
-  background-color: $color-modal-bg;
+  &--decorated {
+    padding: 70px 50px 50px;
+    width: 650px;
+
+    background-color: $color-modal-bg;
+  }
 }
 
 .close {

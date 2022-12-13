@@ -4,4 +4,6 @@ export interface IModalProps {
   children: ReactNode
   close: () => void
   className?: string
+  mode: 'fullscreen' | 'rightSide'
+  isStyled: boolean
 }

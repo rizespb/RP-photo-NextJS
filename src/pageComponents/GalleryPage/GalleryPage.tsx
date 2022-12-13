@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 
-import { Header } from '@components'
+import { Header, Modal } from '@components'
 import { EIcons } from '@constants'
 import { IPhoto } from '@types'
 
@@ -45,6 +45,10 @@ const GalleryPage: FC = () => {
       />
 
       <Gallery photos={photos} />
+
+      <Modal mode="rightSide" close={() => console.log('Modal was closed')} isStyled={false}>
+        Hello
+      </Modal>
     </>
   )
 }
