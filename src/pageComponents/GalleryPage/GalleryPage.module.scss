@@ -1,0 +1,13 @@
+@import '/src/styles/variables/common.scss';
+
+.modalContentArea {
+  width: 100%;
+
+  span {
+    opacity: $slider-controls-opacity;
+  }
+}
+
+.slider {
+  height: 90vh;
+}

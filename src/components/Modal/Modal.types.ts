@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 export interface IModalProps {
   children: ReactNode
   close: () => void
-  className?: string
+  contentAreaClassName?: string
   mode: 'fullscreen' | 'rightSide'
-  isStyled: boolean
+  isStyledcontentArea: boolean
 }

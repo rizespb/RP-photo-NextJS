@@ -9,6 +9,8 @@ $offset: 15px;
   &__photoWrapper {
     position: relative;
 
+    cursor: pointer;
+
     &:not(:last-child) {
       margin-bottom: $offset;
     }

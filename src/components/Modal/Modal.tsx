@@ -9,7 +9,7 @@ import styles from './Modal.module.scss'
 import { IModalProps } from './Modal.types'
 
 const Modal = forwardRef<HTMLDivElement, IModalProps>(function Modal(props, ref) {
-  const { children, className = '', close, isStyled, mode } = props
+  const { children, close, contentAreaClassName = '', isStyledcontentArea, mode } = props
 
   const isFullscreenModal = mode === 'fullscreen'
 
@@ -24,16 +24,16 @@ const Modal = forwardRef<HTMLDivElement, IModalProps>(function Modal(props, ref)
     [styles['container--rightSide']]: !isFullscreenModal,
   })
 
-  const modalClasses = classNames({
-    [styles.modal]: true,
-    [styles['modal--decorated']]: isStyled,
-    [className]: true,
+  const contentAreaClasses = classNames({
+    [styles.contentArea]: true,
+    [styles['contentArea--decorated']]: isStyledcontentArea,
+    [contentAreaClassName]: true,
   })
 
   return (
     <Portal portalContainerId={portalContainerId}>
       <div className={containerClasses}>
-        <div className={modalClasses} ref={ref}>
+        <div className={contentAreaClasses} ref={ref}>
           <Icon name={EIcons.Close} className={styles.close} onClick={close} />
 
           {children}

@@ -12,7 +12,9 @@ import { EIcons } from '@constants'
 import styles from './Slider.module.scss'
 import { ISliderProps } from './Slider.types'
 
-const Slider: FC<ISliderProps> = ({ className = '', photos }) => {
+const Slider: FC<ISliderProps> = (props) => {
+  const { className = '', initialSlideIndex = 0, photos } = props
+
   const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
 
@@ -30,9 +32,10 @@ const Slider: FC<ISliderProps> = ({ className = '', photos }) => {
     <Swiper
       modules={[Autoplay, Navigation]}
       slidesPerView={1}
+      initialSlide={initialSlideIndex}
       loop={true}
       autoplay={{ delay: 3000 }}
-      speed={2000}
+      speed={1000}
       navigation={{
         nextEl: navigationNextRef.current,
         prevEl: navigationPrevRef.current,
@@ -43,7 +46,6 @@ const Slider: FC<ISliderProps> = ({ className = '', photos }) => {
           swiper.params.navigation.nextEl = navigationNextRef.current
         }
       }}
-      pagination={{ clickable: true }}
       className={classNames(styles.slider, className)}
     >
       {photos.map(({ id, link }) => (

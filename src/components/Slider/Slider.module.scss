@@ -1,3 +1,5 @@
+@import '/src/styles/variables/common.scss';
+
 $arrowOffset: 30px;
 
 .slider {
@@ -13,7 +15,7 @@ $arrowOffset: 30px;
   top: 50%;
   transform: translateY(-50%);
 
-  opacity: 0.5;
+  opacity: $slider-controls-opacity;
 
   z-index: 10;
   cursor: pointer;

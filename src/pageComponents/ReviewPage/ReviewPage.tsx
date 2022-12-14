@@ -29,7 +29,7 @@ const ReviewPage: FC = () => {
       <ReviewsList />
 
       {isComponentVisible && (
-        <Modal close={closeModal} mode="fullscreen" ref={ref} isStyled>
+        <Modal close={closeModal} mode="fullscreen" ref={ref} isStyledcontentArea>
           <ReviewForm closeModal={closeModal} />
         </Modal>
       )}
