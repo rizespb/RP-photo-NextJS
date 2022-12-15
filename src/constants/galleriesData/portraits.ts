@@ -1,9 +1,10 @@
-import { TSubGallery } from '@types'
+import { EGalleries, TSubGallery } from '@types'
 
 export const portraitsGallery0: TSubGallery = {
   alias: 'gallery0',
   description: 'Какое-то описание подкатегории Портреты 0',
   id: 0,
+  parentGallery: EGalleries.Portraits,
   photos: [
     { id: 0, link: '/images/photos/portraits/gallery0/0.avif' },
     { id: 1, link: '/images/photos/portraits/gallery0/1.avif' },
@@ -28,6 +29,7 @@ export const portraitsGallery1: TSubGallery = {
   alias: 'gallery1',
   description: 'Какое-то описание подкатегории Портреты 1',
   id: 1,
+  parentGallery: EGalleries.Portraits,
   photos: [
     { id: 0, link: '/images/photos/portraits/gallery1/0.avif' },
     { id: 1, link: '/images/photos/portraits/gallery1/1.avif' },
@@ -50,6 +52,7 @@ export const portraitsGallery2: TSubGallery = {
   alias: 'gallery2',
   description: 'Какое-то описание подкатегории Портреты 2',
   id: 2,
+  parentGallery: EGalleries.Portraits,
   photos: [
     { id: 0, link: '/images/photos/portraits/gallery2/0.avif' },
     { id: 1, link: '/images/photos/portraits/gallery2/1.avif' },

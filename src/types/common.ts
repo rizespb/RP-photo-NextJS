@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-export const enum EGalleries {
+export enum EGalleries {
   Family = 'family',
   Nature = 'nature',
   Portraits = 'portraits',
@@ -31,6 +31,7 @@ export interface IGallery {
 export type TSubGallery = Pick<IGallery, 'title' | 'description' | 'previewPhoto' | 'id'> & {
   alias: string
   photos: IPhoto[]
+  parentGallery: EGalleries
 }
 
 export type TGalleryPreview = Pick<IGallery, 'title' | 'previewPhoto' | 'id'> & {

@@ -1,9 +1,10 @@
-import { TSubGallery } from '@types'
+import { EGalleries, TSubGallery } from '@types'
 
 export const natureGallery0: TSubGallery = {
   alias: 'gallery0',
   description: 'Какое-то описание подкатегории Природа 0',
   id: 0,
+  parentGallery: EGalleries.Nature,
   photos: [
     { id: 0, link: '/images/photos/nature/gallery0/0.avif' },
     { id: 1, link: '/images/photos/nature/gallery0/1.avif' },
@@ -30,6 +31,7 @@ export const natureGallery1: TSubGallery = {
   alias: 'gallery1',
   description: 'Какое-то описание подкатегории Природа 1',
   id: 1,
+  parentGallery: EGalleries.Nature,
   photos: [
     { id: 0, link: '/images/photos/nature/gallery1/0.avif' },
     { id: 1, link: '/images/photos/nature/gallery1/1.avif' },
@@ -50,6 +52,7 @@ export const natureGallery2: TSubGallery = {
   alias: 'gallery2',
   description: 'Какое-то описание подкатегории Природа 2',
   id: 2,
+  parentGallery: EGalleries.Nature,
   photos: [
     { id: 0, link: '/images/photos/nature/gallery2/0.avif' },
     { id: 1, link: '/images/photos/nature/gallery2/1.avif' },
@@ -78,6 +81,7 @@ export const natureGallery3: TSubGallery = {
   alias: 'gallery3',
   description: 'Какое-то описание подкатегории Природа 3',
   id: 3,
+  parentGallery: EGalleries.Nature,
   photos: [
     { id: 0, link: '/images/photos/nature/gallery3/0.avif' },
     { id: 1, link: '/images/photos/nature/gallery3/1.avif' },
@@ -122,6 +126,7 @@ export const natureGallery4: TSubGallery = {
   alias: 'gallery4',
   description: 'Какое-то описание подкатегории Природа 4',
   id: 4,
+  parentGallery: EGalleries.Nature,
   photos: [
     { id: 0, link: '/images/photos/nature/gallery4/0.avif' },
     { id: 1, link: '/images/photos/nature/gallery4/1.avif' },

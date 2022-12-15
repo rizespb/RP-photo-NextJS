@@ -1,9 +1,10 @@
-import { TSubGallery } from '@types'
+import { EGalleries, TSubGallery } from '@types'
 
 export const familyGallery0: TSubGallery = {
   alias: 'gallery0',
   description: 'Какое-то описание подкатегории Семейные 0',
   id: 0,
+  parentGallery: EGalleries.Family,
   photos: [
     { id: 0, link: '/images/photos/family/gallery0/0.avif' },
     { id: 1, link: '/images/photos/family/gallery0/1.avif' },
@@ -26,6 +27,7 @@ export const familyGallery1: TSubGallery = {
   alias: 'gallery1',
   description: 'Какое-то описание подкатегории Семейные 1',
   id: 1,
+  parentGallery: EGalleries.Family,
   photos: [
     { id: 0, link: '/images/photos/family/gallery1/0.avif' },
     { id: 1, link: '/images/photos/family/gallery1/1.avif' },
@@ -58,6 +60,7 @@ export const familyGallery2: TSubGallery = {
   alias: 'gallery2',
   description: 'Какое-то описание подкатегории Семейные 2',
   id: 2,
+  parentGallery: EGalleries.Family,
   photos: [
     { id: 0, link: '/images/photos/family/gallery2/0.avif' },
     { id: 1, link: '/images/photos/family/gallery2/1.avif' },
@@ -90,6 +93,7 @@ export const familyGallery3: TSubGallery = {
   alias: 'gallery3',
   description: 'Какое-то описание подкатегории Семейные 3',
   id: 3,
+  parentGallery: EGalleries.Family,
   photos: [
     { id: 0, link: '/images/photos/family/gallery3/0.avif' },
     { id: 1, link: '/images/photos/family/gallery3/1.avif' },

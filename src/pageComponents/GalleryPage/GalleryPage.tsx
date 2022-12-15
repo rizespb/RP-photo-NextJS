@@ -13,8 +13,6 @@ const GalleryPage: FC<IGalleryPage> = ({ photos }) => {
   const { isComponentVisible, ref, setIsComponentVisible } = useComponentVisible<HTMLDivElement>(false)
   const [initialSlideIndex, setInitialSlideIndex] = useState(0)
 
-  const { query } = useRouter()
-
   const closeModal = (): void => {
     setInitialSlideIndex(0)
     setIsComponentVisible(false)

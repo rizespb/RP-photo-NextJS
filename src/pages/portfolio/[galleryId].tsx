@@ -1,13 +1,36 @@
 import type { NextPage } from 'next'
+import Error from 'next/error'
+import { useRouter } from 'next/router'
 
 import { Layout } from '@components'
-import { GalleryPage } from '@pageComponents'
-import { familyGallery0 } from 'constants/galleriesData/family'
+import { photosGalleries } from '@constants'
+import { GalleriesListPage } from '@pageComponents'
+import { EGalleries } from '@types'
+import { getGalleries } from '@utils'
 
-const Gallery: NextPage = () => (
-  <Layout>
-    <GalleryPage photos={familyGallery0.photos} />
-  </Layout>
-)
+const GalleriesList: NextPage = () => {
+  const router = useRouter()
+  const {
+    query: { galleryId },
+  } = router
 
-export default Gallery
+  const isValidGallery = typeof galleryId === 'string' && Object.values(EGalleries).includes(galleryId as EGalleries)
+
+  const currentGallery = photosGalleries.find(({ alias }) => alias === galleryId)
+
+  if (!isValidGallery || !currentGallery) {
+    return <Error statusCode={404} />
+  }
+
+  const { children, description, title } = currentGallery
+
+  const galleries = getGalleries(children)
+
+  return (
+    <Layout>
+      <GalleriesListPage title={title} description={description} galleries={galleries} />
+    </Layout>
+  )
+}
+
+export default GalleriesList
