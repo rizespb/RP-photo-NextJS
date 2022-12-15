@@ -12,7 +12,6 @@ import { INavItem, TCollapsableItemProps, TNavItemProps } from './Navigation.typ
 
 const NavItem: FC<TNavItemProps> = (props) => {
   const { link, subItems, title } = props
-
   const hasSubItems = subItems && subItems.length > 0
 
   return (
@@ -53,9 +52,9 @@ const CollapsableItem: FC<TCollapsableItemProps> = (props) => {
 }
 
 const Navigation: FC = () => {
-  const navItems = useMemo(() => {
-    const portfolioIndex = navItemsData.findIndex(({ title }) => title === ENavItems.Portfolio)
-    const portfolioItem = navItemsData[portfolioIndex]
+  const navItems = useMemo((): INavItem[] => {
+    const portfolioItemIndex = navItemsData.findIndex(({ title }) => title === ENavItems.Portfolio)
+    const portfolioItem = navItemsData[portfolioItemIndex]
 
     const portfolioSubItems: INavItem[] = photosGalleries.map((gallery) => ({
       id: gallery.id,
@@ -65,7 +64,7 @@ const Navigation: FC = () => {
 
     const newNavItems = [...navItemsData]
 
-    navItemsData[portfolioIndex] = { ...portfolioItem, subItems: portfolioSubItems }
+    newNavItems[portfolioItemIndex] = { ...portfolioItem, subItems: portfolioSubItems }
 
     return newNavItems
   }, [])
