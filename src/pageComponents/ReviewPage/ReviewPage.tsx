@@ -26,7 +26,9 @@ const ReviewPage: FC = () => {
         buttonIcon={EIcons.Message}
       />
 
-      <ReviewsList />
+      <section>
+        <ReviewsList />
+      </section>
 
       {isComponentVisible && (
         <Modal close={closeModal} mode="fullscreen" ref={ref} isStyledcontentArea>

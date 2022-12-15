@@ -14,7 +14,8 @@
       "@ui": ["components/ui/index"],
       "@data": ["data/index"],
       "@types": ["types/index"],
-      "@api": ["api/index"]
+      "@api": ["api/index"],
+      "@utils": ["utils/index"]
     },
     /* Visit https://aka.ms/tsconfig to read more about this file */
 

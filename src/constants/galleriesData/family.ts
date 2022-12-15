@@ -1,7 +1,9 @@
-import { ISubGallery } from '@types'
+import { TSubGallery } from '@types'
 
-export const familyGallery0: ISubGallery = {
+export const familyGallery0: TSubGallery = {
   alias: 'gallery0',
+  description: 'Какое-то описание подкатегории Семейные 0',
+  id: 0,
   photos: [
     { id: 0, link: '/images/photos/family/gallery0/0.avif' },
     { id: 1, link: '/images/photos/family/gallery0/1.avif' },
@@ -16,10 +18,14 @@ export const familyGallery0: ISubGallery = {
     { id: 10, link: '/images/photos/family/gallery0/10.avif' },
     { id: 11, link: '/images/photos/family/gallery0/11.avif' },
   ],
+  previewPhoto: '/images/photos/family/gallery0/3.avif',
+  title: 'Семейные 0',
 }
 
-export const familyGallery1: ISubGallery = {
+export const familyGallery1: TSubGallery = {
   alias: 'gallery1',
+  description: 'Какое-то описание подкатегории Семейные 1',
+  id: 1,
   photos: [
     { id: 0, link: '/images/photos/family/gallery1/0.avif' },
     { id: 1, link: '/images/photos/family/gallery1/1.avif' },
@@ -44,10 +50,14 @@ export const familyGallery1: ISubGallery = {
     { id: 20, link: '/images/photos/family/gallery1/20.avif' },
     { id: 21, link: '/images/photos/family/gallery1/21.avif' },
   ],
+  previewPhoto: '/images/photos/family/gallery1/3.avif',
+  title: 'Семейные 1',
 }
 
-export const familyGallery2: ISubGallery = {
+export const familyGallery2: TSubGallery = {
   alias: 'gallery2',
+  description: 'Какое-то описание подкатегории Семейные 2',
+  id: 2,
   photos: [
     { id: 0, link: '/images/photos/family/gallery2/0.avif' },
     { id: 1, link: '/images/photos/family/gallery2/1.avif' },
@@ -72,10 +82,14 @@ export const familyGallery2: ISubGallery = {
     { id: 20, link: '/images/photos/family/gallery2/20.avif' },
     { id: 21, link: '/images/photos/family/gallery2/21.avif' },
   ],
+  previewPhoto: '/images/photos/family/gallery2/3.avif',
+  title: 'Семейные 2',
 }
 
-export const familyGallery3: ISubGallery = {
+export const familyGallery3: TSubGallery = {
   alias: 'gallery3',
+  description: 'Какое-то описание подкатегории Семейные 3',
+  id: 3,
   photos: [
     { id: 0, link: '/images/photos/family/gallery3/0.avif' },
     { id: 1, link: '/images/photos/family/gallery3/1.avif' },
@@ -92,4 +106,6 @@ export const familyGallery3: ISubGallery = {
     { id: 12, link: '/images/photos/family/gallery3/12.avif' },
     { id: 13, link: '/images/photos/family/gallery3/13.avif' },
   ],
+  previewPhoto: '/images/photos/family/gallery3/3.avif',
+  title: 'Семейные 3',
 }

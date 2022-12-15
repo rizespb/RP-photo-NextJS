@@ -4,9 +4,9 @@ import { mainPagePhotos } from './MainPage.data'
 import styles from './MainPage.module.scss'
 
 const MainPage = () => (
-  <div className={styles.wrapper}>
+  <section className={styles.wrapper}>
     <Slider photos={mainPagePhotos} />
-  </div>
+  </section>
 )
 
 export default MainPage

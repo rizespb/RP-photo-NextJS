@@ -1,7 +1,9 @@
-import { ISubGallery } from '@types'
+import { TSubGallery } from '@types'
 
-export const portraitsGallery0: ISubGallery = {
+export const portraitsGallery0: TSubGallery = {
   alias: 'gallery0',
+  description: 'Какое-то описание подкатегории Портреты 0',
+  id: 0,
   photos: [
     { id: 0, link: '/images/photos/portraits/gallery0/0.avif' },
     { id: 1, link: '/images/photos/portraits/gallery0/1.avif' },
@@ -18,10 +20,14 @@ export const portraitsGallery0: ISubGallery = {
     { id: 12, link: '/images/photos/portraits/gallery0/12.avif' },
     { id: 13, link: '/images/photos/portraits/gallery0/13.avif' },
   ],
+  previewPhoto: '/images/photos/nature/gallery0/3.avif',
+  title: 'Портреты 0',
 }
 
-export const portraitsGallery1: ISubGallery = {
+export const portraitsGallery1: TSubGallery = {
   alias: 'gallery1',
+  description: 'Какое-то описание подкатегории Портреты 1',
+  id: 1,
   photos: [
     { id: 0, link: '/images/photos/portraits/gallery1/0.avif' },
     { id: 1, link: '/images/photos/portraits/gallery1/1.avif' },
@@ -36,10 +42,14 @@ export const portraitsGallery1: ISubGallery = {
     { id: 10, link: '/images/photos/portraits/gallery1/10.avif' },
     { id: 11, link: '/images/photos/portraits/gallery1/11.avif' },
   ],
+  previewPhoto: '/images/photos/nature/gallery1/3.avif',
+  title: 'Портреты 1',
 }
 
-export const portraitsGallery2: ISubGallery = {
+export const portraitsGallery2: TSubGallery = {
   alias: 'gallery2',
+  description: 'Какое-то описание подкатегории Портреты 2',
+  id: 2,
   photos: [
     { id: 0, link: '/images/photos/portraits/gallery2/0.avif' },
     { id: 1, link: '/images/photos/portraits/gallery2/1.avif' },
@@ -58,4 +68,6 @@ export const portraitsGallery2: ISubGallery = {
     { id: 14, link: '/images/photos/portraits/gallery2/14.avif' },
     { id: 15, link: '/images/photos/portraits/gallery2/15.avif' },
   ],
+  previewPhoto: '/images/photos/nature/gallery2/3.avif',
+  title: 'Портреты 2',
 }

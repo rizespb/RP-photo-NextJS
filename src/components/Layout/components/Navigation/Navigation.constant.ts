@@ -1,10 +1,12 @@
+import { ENavItems } from '@types'
+
 import { INavItem } from './Navigation.types'
 
-export const navItems: INavItem[] = [
+export const navItemsData: INavItem[] = [
   {
     id: 0,
-    link: '/menu0',
-    title: 'Меню 0',
+    subItems: [],
+    title: ENavItems.Portfolio,
   },
   {
     id: 1,
@@ -25,12 +27,12 @@ export const navItems: INavItem[] = [
         title: 'Меню 12',
       },
     ],
-    title: 'Меню 1',
+    title: 'Меню 1!!!',
   },
   {
     id: 2,
     link: '/review',
-    title: 'Отзывы',
+    title: ENavItems.Reviews,
   },
   {
     id: 3,
@@ -66,7 +68,7 @@ export const navItems: INavItem[] = [
         title: 'Меню 35',
       },
     ],
-    title: 'Меню 3',
+    title: 'Меню 3!!!',
   },
   {
     id: 4,

@@ -41,7 +41,9 @@ const GalleryPage: FC<IGalleryPage> = ({ photos }) => {
         buttonIcon={EIcons.ArrowRight}
       />
 
-      <Gallery photos={photos} onPhotoClick={handlePhotoClick} />
+      <section>
+        <Gallery photos={photos} onPhotoClick={handlePhotoClick} />
+      </section>
 
       {isComponentVisible && (
         <Modal

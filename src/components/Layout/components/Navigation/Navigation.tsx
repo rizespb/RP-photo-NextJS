@@ -1,12 +1,14 @@
 import classNames from 'classnames'
-import { FC, useState } from 'react'
+import { FC, useMemo, useState } from 'react'
 import { Collapse } from 'react-collapse'
 
 import { Link } from '@components/ui'
+import { photosGalleries } from '@constants'
+import { ENavItems } from '@types'
 
-import { navItems } from './Navigation.constant'
+import { navItemsData } from './Navigation.constant'
 import styles from './Navigation.module.scss'
-import { TCollapsableItemProps, TNavItemProps } from './Navigation.types'
+import { INavItem, TCollapsableItemProps, TNavItemProps } from './Navigation.types'
 
 const NavItem: FC<TNavItemProps> = (props) => {
   const { link, subItems, title } = props
@@ -37,7 +39,7 @@ const CollapsableItem: FC<TCollapsableItemProps> = (props) => {
 
   return (
     <li className={styles.navItem}>
-      <span onClick={() => setIsOpen(!isOpen)}>{title}!!!</span>
+      <span onClick={() => setIsOpen(!isOpen)}>{title}</span>
 
       <Collapse isOpened={isOpen}>
         <ul className={styles.subNavigation__list}>
@@ -50,18 +52,37 @@ const CollapsableItem: FC<TCollapsableItemProps> = (props) => {
   )
 }
 
-const Navigation: FC = () => (
-  <nav className={styles.navigation}>
-    <div className={classNames(styles.shadow, styles.shadow__top)} key="shadow-top" />
+const Navigation: FC = () => {
+  const navItems = useMemo(() => {
+    const portfolioIndex = navItemsData.findIndex(({ title }) => title === ENavItems.Portfolio)
+    const portfolioItem = navItemsData[portfolioIndex]
 
-    <ul className={styles.navigation__list}>
-      {navItems.map((navItem) => (
-        <NavItem link={navItem.link} subItems={navItem.subItems} title={navItem.title} key={navItem.id} />
-      ))}
-    </ul>
+    const portfolioSubItems: INavItem[] = photosGalleries.map((gallery) => ({
+      id: gallery.id,
+      link: `/portfolio/${gallery.alias}`,
+      title: gallery.title,
+    }))
 
-    <div className={classNames(styles.shadow, styles.shadow__bottom)} key="shadow-bottom" />
-  </nav>
-)
+    const newNavItems = [...navItemsData]
+
+    navItemsData[portfolioIndex] = { ...portfolioItem, subItems: portfolioSubItems }
+
+    return newNavItems
+  }, [])
+
+  return (
+    <nav className={styles.navigation}>
+      <div className={classNames(styles.shadow, styles.shadow__top)} key="shadow-top" />
+
+      <ul className={styles.navigation__list}>
+        {navItems.map((navItem) => (
+          <NavItem link={navItem.link} subItems={navItem.subItems} title={navItem.title} key={navItem.id} />
+        ))}
+      </ul>
+
+      <div className={classNames(styles.shadow, styles.shadow__bottom)} key="shadow-bottom" />
+    </nav>
+  )
+}
 
 export default Navigation

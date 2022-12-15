@@ -1,7 +1,9 @@
-import { ISubGallery } from '@types'
+import { TSubGallery } from '@types'
 
-export const natureGallery0: ISubGallery = {
+export const natureGallery0: TSubGallery = {
   alias: 'gallery0',
+  description: 'Какое-то описание подкатегории Природа 0',
+  id: 0,
   photos: [
     { id: 0, link: '/images/photos/nature/gallery0/0.avif' },
     { id: 1, link: '/images/photos/nature/gallery0/1.avif' },
@@ -20,10 +22,14 @@ export const natureGallery0: ISubGallery = {
     { id: 14, link: '/images/photos/nature/gallery0/14.avif' },
     { id: 15, link: '/images/photos/nature/gallery0/15.avif' },
   ],
+  previewPhoto: '/images/photos/nature/gallery0/3.avif',
+  title: 'Природа 0',
 }
 
-export const natureGallery1: ISubGallery = {
+export const natureGallery1: TSubGallery = {
   alias: 'gallery1',
+  description: 'Какое-то описание подкатегории Природа 1',
+  id: 1,
   photos: [
     { id: 0, link: '/images/photos/nature/gallery1/0.avif' },
     { id: 1, link: '/images/photos/nature/gallery1/1.avif' },
@@ -36,10 +42,14 @@ export const natureGallery1: ISubGallery = {
     { id: 8, link: '/images/photos/nature/gallery1/8.avif' },
     { id: 9, link: '/images/photos/nature/gallery1/9.avif' },
   ],
+  previewPhoto: '/images/photos/nature/gallery1/3.avif',
+  title: 'Природа 1',
 }
 
-export const natureGallery2: ISubGallery = {
+export const natureGallery2: TSubGallery = {
   alias: 'gallery2',
+  description: 'Какое-то описание подкатегории Природа 2',
+  id: 2,
   photos: [
     { id: 0, link: '/images/photos/nature/gallery2/0.avif' },
     { id: 1, link: '/images/photos/nature/gallery2/1.avif' },
@@ -60,10 +70,14 @@ export const natureGallery2: ISubGallery = {
     { id: 16, link: '/images/photos/nature/gallery2/16.avif' },
     { id: 17, link: '/images/photos/nature/gallery2/17.avif' },
   ],
+  previewPhoto: '/images/photos/nature/gallery2/3.avif',
+  title: 'Природа 2',
 }
 
-export const natureGallery3: ISubGallery = {
+export const natureGallery3: TSubGallery = {
   alias: 'gallery3',
+  description: 'Какое-то описание подкатегории Природа 3',
+  id: 3,
   photos: [
     { id: 0, link: '/images/photos/nature/gallery3/0.avif' },
     { id: 1, link: '/images/photos/nature/gallery3/1.avif' },
@@ -100,10 +114,14 @@ export const natureGallery3: ISubGallery = {
     { id: 32, link: '/images/photos/nature/gallery3/32.avif' },
     { id: 33, link: '/images/photos/nature/gallery3/33.avif' },
   ],
+  previewPhoto: '/images/photos/nature/gallery3/3.avif',
+  title: 'Природа 3',
 }
 
-export const natureGallery4: ISubGallery = {
+export const natureGallery4: TSubGallery = {
   alias: 'gallery4',
+  description: 'Какое-то описание подкатегории Природа 4',
+  id: 4,
   photos: [
     { id: 0, link: '/images/photos/nature/gallery4/0.avif' },
     { id: 1, link: '/images/photos/nature/gallery4/1.avif' },
@@ -120,4 +138,6 @@ export const natureGallery4: ISubGallery = {
     { id: 12, link: '/images/photos/nature/gallery4/12.avif' },
     { id: 13, link: '/images/photos/nature/gallery4/13.avif' },
   ],
+  previewPhoto: '/images/photos/nature/gallery4/3.avif',
+  title: 'Природа 4',
 }
