@@ -50,7 +50,14 @@ const Slider: FC<ISliderProps> = (props) => {
     >
       {photos.map(({ id, link }) => (
         <SwiperSlide key={id} className={styles.slide}>
-          <Image src={link} alt="" fill={true} className={styles.slideImage} />
+          <Image
+            src={link}
+            alt=""
+            fill={true}
+            className={styles.slideImage}
+            sizes="(max-width: 768px) 100vw,
+              80vw"
+          />
         </SwiperSlide>
       ))}
 

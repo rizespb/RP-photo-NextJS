@@ -12,8 +12,8 @@ const Gallery: FC<IGalleryProps> = ({ onPhotoClick, photos }) => (
           src={link}
           alt=""
           className={styles.gallery__photo}
-          width={1000}
-          height={1000}
+          width={400}
+          height={600}
           sizes="(max-width: 768px) 100vw,
               50vw"
         />
