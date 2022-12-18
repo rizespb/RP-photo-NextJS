@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import { FC } from 'react'
 
-import styles from './Gallery.module.scss'
-import { IGalleryProps } from './Gallery.types'
+import styles from './PhotoGallery.module.scss'
+import { IPhotoGalleryProps } from './PhotoGallery.types'
 
-const Gallery: FC<IGalleryProps> = ({ onPhotoClick, photos }) => (
+const PhotoGallery: FC<IPhotoGalleryProps> = ({ onPhotoClick, photos }) => (
   <ul className={styles.gallery}>
     {photos.map(({ id, link }) => (
       <li key={id} className={styles.gallery__photoWrapper} onClick={() => onPhotoClick && onPhotoClick(id)}>
@@ -22,4 +22,4 @@ const Gallery: FC<IGalleryProps> = ({ onPhotoClick, photos }) => (
   </ul>
 )
 
-export default Gallery
+export default PhotoGallery

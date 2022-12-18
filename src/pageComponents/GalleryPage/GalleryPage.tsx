@@ -1,15 +1,14 @@
-import { useRouter } from 'next/router'
 import { FC, useState } from 'react'
 
 import { Header, Modal, Slider } from '@components'
 import { EIcons } from '@constants'
 import { useComponentVisible } from '@hooks'
 
-import Gallery from './Gallery'
+import PhotoGallery from './components/PhotoGallery'
 import styles from './GalleryPage.module.scss'
-import { IGalleryPage } from './GalleryPage.types'
+import { IGalleryPageProps } from './GalleryPage.types'
 
-const GalleryPage: FC<IGalleryPage> = ({ photos }) => {
+const GalleryPage: FC<IGalleryPageProps> = ({ photos }) => {
   const { isComponentVisible, ref, setIsComponentVisible } = useComponentVisible<HTMLDivElement>(false)
   const [initialSlideIndex, setInitialSlideIndex] = useState(0)
 
@@ -40,7 +39,7 @@ const GalleryPage: FC<IGalleryPage> = ({ photos }) => {
       />
 
       <section>
-        <Gallery photos={photos} onPhotoClick={handlePhotoClick} />
+        <PhotoGallery photos={photos} onPhotoClick={handlePhotoClick} />
       </section>
 
       {isComponentVisible && (

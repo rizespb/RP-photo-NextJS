@@ -1,10 +1,10 @@
-import { EGalleries, IGallery } from '@types'
+import { EGalleries, ICategory } from '@types'
 
 import { familyGallery0, familyGallery1, familyGallery2, familyGallery3 } from './galleriesData/family'
 import { natureGallery0, natureGallery1, natureGallery2, natureGallery3, natureGallery4 } from './galleriesData/nature'
 import { portraitsGallery0, portraitsGallery1, portraitsGallery2 } from './galleriesData/portraits'
 
-export const photosGalleries: IGallery[] = [
+export const photosGalleries: ICategory[] = [
   {
     alias: EGalleries.Family,
     children: [familyGallery0, familyGallery1, familyGallery2, familyGallery3],

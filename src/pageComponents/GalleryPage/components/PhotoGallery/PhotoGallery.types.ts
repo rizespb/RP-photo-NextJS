@@ -1,6 +1,6 @@
 import { IPhoto } from '@types'
 
-export interface IGalleryProps {
+export interface IPhotoGalleryProps {
   photos: IPhoto[]
   onPhotoClick?: (id: number) => void
 }

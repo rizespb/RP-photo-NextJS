@@ -1,7 +1,7 @@
-import { IGallery, TGalleryPreview, TSubGallery } from '@types'
+import { ICategory, TGallery, TGalleryPreview } from '@types'
 
-export const getGalleries = (photosGalleries: IGallery[] | TSubGallery[]): TGalleryPreview[] => {
-  const isSubGallary = (gallery: IGallery | TSubGallery): gallery is TSubGallery => 'photos' in gallery
+export const getGalleries = (photosGalleries: ICategory[] | TGallery[]): TGalleryPreview[] => {
+  const isSubGallary = (gallery: ICategory | TGallery): gallery is TGallery => 'photos' in gallery
 
   return photosGalleries.map((gallery) => ({
     id: gallery.id,

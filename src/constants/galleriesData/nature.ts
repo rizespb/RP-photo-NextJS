@@ -1,6 +1,6 @@
-import { EGalleries, TSubGallery } from '@types'
+import { EGalleries, TGallery } from '@types'
 
-export const natureGallery0: TSubGallery = {
+export const natureGallery0: TGallery = {
   alias: 'gallery0',
   description: 'Какое-то описание подкатегории Природа 0',
   id: 0,
@@ -27,7 +27,7 @@ export const natureGallery0: TSubGallery = {
   title: 'Природа 0',
 }
 
-export const natureGallery1: TSubGallery = {
+export const natureGallery1: TGallery = {
   alias: 'gallery1',
   description: 'Какое-то описание подкатегории Природа 1',
   id: 1,
@@ -48,7 +48,7 @@ export const natureGallery1: TSubGallery = {
   title: 'Природа 1',
 }
 
-export const natureGallery2: TSubGallery = {
+export const natureGallery2: TGallery = {
   alias: 'gallery2',
   description: 'Какое-то описание подкатегории Природа 2',
   id: 2,
@@ -77,7 +77,7 @@ export const natureGallery2: TSubGallery = {
   title: 'Природа 2',
 }
 
-export const natureGallery3: TSubGallery = {
+export const natureGallery3: TGallery = {
   alias: 'gallery3',
   description: 'Какое-то описание подкатегории Природа 3',
   id: 3,
@@ -122,7 +122,7 @@ export const natureGallery3: TSubGallery = {
   title: 'Природа 3',
 }
 
-export const natureGallery4: TSubGallery = {
+export const natureGallery4: TGallery = {
   alias: 'gallery4',
   description: 'Какое-то описание подкатегории Природа 4',
   id: 4,

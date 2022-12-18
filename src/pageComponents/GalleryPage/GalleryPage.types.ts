@@ -1,5 +1,5 @@
 import { IPhoto } from '@types'
 
-export interface IGalleryPage {
+export interface IGalleryPageProps {
   photos: IPhoto[]
 }

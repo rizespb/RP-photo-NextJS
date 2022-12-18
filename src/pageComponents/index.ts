@@ -1,4 +1,5 @@
-export { default as GalleriesListPage } from './GalleriesListPage'
-export { default as GalleryPage } from './GalleryPage'
+export { default as CategoryPage } from './CategoryPage'
+export * from './GalleryPage'
 export { default as MainPage } from './MainPage'
+export { default as PortfolioPage } from './PortfolioPage'
 export { default as ReviewPage } from './ReviewPage'

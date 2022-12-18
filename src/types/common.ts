@@ -1,3 +1,5 @@
+import { ParsedUrlQuery } from 'querystring'
+
 import { ReactElement } from 'react'
 
 export enum EGalleries {
@@ -19,21 +21,26 @@ export interface IPhoto {
 
 export type TStringOrElement = string | ReactElement
 
-export interface IGallery {
+export interface ICategory {
   alias: EGalleries
   title: string
   description: string
-  children: TSubGallery[]
+  children: TGallery[]
   id: number
   previewPhoto: string
 }
 
-export type TSubGallery = Pick<IGallery, 'title' | 'description' | 'previewPhoto' | 'id'> & {
+export type TGallery = Pick<ICategory, 'title' | 'description' | 'previewPhoto' | 'id'> & {
   alias: string
   photos: IPhoto[]
   parentGallery: EGalleries
 }
 
-export type TGalleryPreview = Pick<IGallery, 'title' | 'previewPhoto' | 'id'> & {
+export type TGalleryPreview = Pick<ICategory, 'title' | 'previewPhoto' | 'id'> & {
   link: string
+}
+
+export interface IParams extends ParsedUrlQuery {
+  category?: string
+  gallery?: string
 }

@@ -4,19 +4,19 @@ import { useRouter } from 'next/router'
 
 import { Layout } from '@components'
 import { photosGalleries } from '@constants'
-import { GalleriesListPage } from '@pageComponents'
+import { CategoryPage } from '@pageComponents'
 import { EGalleries } from '@types'
 import { getGalleries } from '@utils'
 
-const GalleriesList: NextPage = () => {
+const Category: NextPage = () => {
   const router = useRouter()
   const {
-    query: { galleryId },
+    query: { category },
   } = router
 
-  const isValidGallery = typeof galleryId === 'string' && Object.values(EGalleries).includes(galleryId as EGalleries)
+  const isValidGallery = typeof category === 'string' && Object.values(EGalleries).includes(category as EGalleries)
 
-  const currentGallery = photosGalleries.find(({ alias }) => alias === galleryId)
+  const currentGallery = photosGalleries.find(({ alias }) => alias === category)
 
   if (!isValidGallery || !currentGallery) {
     return <Error statusCode={404} />
@@ -28,9 +28,9 @@ const GalleriesList: NextPage = () => {
 
   return (
     <Layout>
-      <GalleriesListPage title={title} description={description} galleries={galleries} />
+      <CategoryPage title={title} description={description} galleries={galleries} />
     </Layout>
   )
 }
 
-export default GalleriesList
+export default Category
