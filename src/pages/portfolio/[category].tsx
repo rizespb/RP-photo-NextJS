@@ -1,36 +1,61 @@
-import type { NextPage } from 'next'
-import Error from 'next/error'
-import { useRouter } from 'next/router'
+import type { GetStaticPaths, GetStaticPathsResult, GetStaticProps, GetStaticPropsContext, NextPage } from 'next'
 
 import { Layout } from '@components'
 import { photosGalleries } from '@constants'
-import { CategoryPage } from '@pageComponents'
-import { EGalleries } from '@types'
-import { getGalleries } from '@utils'
+import { CategoryPage, ICategoryPageProps } from '@pageComponents'
+import { IParams } from '@types'
 
-const Category: NextPage = () => {
-  const router = useRouter()
-  const {
-    query: { category },
-  } = router
+const Category: NextPage<ICategoryPageProps> = (props) => (
+  <Layout>
+    <CategoryPage {...props} />
+  </Layout>
+)
 
-  const isValidGallery = typeof category === 'string' && Object.values(EGalleries).includes(category as EGalleries)
-
-  const currentGallery = photosGalleries.find(({ alias }) => alias === category)
-
-  if (!isValidGallery || !currentGallery) {
-    return <Error statusCode={404} />
+export const getStaticProps: GetStaticProps<ICategoryPageProps> = ({ params }: GetStaticPropsContext<IParams>) => {
+  if (params === undefined) {
+    return {
+      notFound: true,
+    }
   }
 
-  const { children, description, title } = currentGallery
+  const { category } = params
 
-  const galleries = getGalleries(children)
+  const currentCategory = photosGalleries.find(({ alias }) => alias === category)
 
-  return (
-    <Layout>
-      <CategoryPage title={title} description={description} galleries={galleries} />
-    </Layout>
-  )
+  if (currentCategory === undefined) {
+    return {
+      notFound: true,
+    }
+  }
+
+  const { alias: categoryAlias, description, title } = currentCategory
+
+  const galleryPreviews = currentCategory.children.map((gallery) => {
+    const { alias, id, previewPhoto, title } = gallery
+
+    return { id, link: `/portfolio/${categoryAlias}/${alias}`, previewPhoto, title }
+  })
+
+  return {
+    props: {
+      description,
+      galleryPreviews,
+      title,
+    },
+  }
+}
+
+export const getStaticPaths: GetStaticPaths = () => {
+  const paths: GetStaticPathsResult['paths'] = photosGalleries.map(({ alias: categoriAlias }) => {
+    return {
+      params: { category: categoriAlias },
+    }
+  })
+
+  return {
+    fallback: false,
+    paths,
+  }
 }
 
 export default Category

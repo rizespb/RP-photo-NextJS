@@ -1,6 +1,6 @@
 import { Slider } from '@components'
 
-import { mainPagePhotos } from './MainPage.data'
+import { mainPagePhotos } from './MainPage.constants'
 import styles from './MainPage.module.scss'
 
 const MainPage = () => (

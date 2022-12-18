@@ -1,5 +1,5 @@
-export { default as CategoryPage } from './CategoryPage'
+export * from './CategoryPage'
 export * from './GalleryPage'
 export { default as MainPage } from './MainPage'
-export { default as PortfolioPage } from './PortfolioPage'
+export * from './PortfolioPage'
 export { default as ReviewPage } from './ReviewPage'

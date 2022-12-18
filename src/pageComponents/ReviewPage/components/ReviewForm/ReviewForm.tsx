@@ -9,7 +9,7 @@ import { Button, Input, TextArea } from '@components/ui'
 import { envVars } from '@constants'
 import { ERequestStatus } from '@types'
 
-import { TEXTS } from './constants'
+import { TEXTS } from './ReviewForm.constants'
 import styles from './ReviewForm.module.scss'
 import { reviewFormValidationSchema } from './ReviewForm.schema'
 import { IReviewFormProps } from './ReviewForm.types'

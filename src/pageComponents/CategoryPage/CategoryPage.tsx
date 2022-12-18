@@ -2,16 +2,16 @@ import { FC } from 'react'
 
 import { GalleriesList, Header } from '@components'
 
-import { IGalleriesListPageProps } from './CategoryPage.types'
+import { ICategoryPageProps } from './CategoryPage.types'
 
-const CategoryPage: FC<IGalleriesListPageProps> = (props) => {
-  const { description, galleries, title } = props
+const CategoryPage: FC<ICategoryPageProps> = (props) => {
+  const { description, galleryPreviews, title } = props
 
   return (
     <>
       <Header title={title} description={description} />
 
-      <GalleriesList galleries={galleries} />
+      <GalleriesList galleryPreviews={galleryPreviews} />
     </>
   )
 }

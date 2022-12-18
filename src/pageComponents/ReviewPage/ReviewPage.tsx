@@ -5,7 +5,7 @@ import { EIcons } from '@constants'
 import { useComponentVisible } from '@hooks'
 
 import { ReviewForm, ReviewsList } from './components'
-import { TEXTS } from './constants'
+import { TEXTS } from './ReviewPage.constants'
 
 const ReviewPage: FC = () => {
   const { isComponentVisible, ref, setIsComponentVisible } = useComponentVisible<HTMLDivElement>(false)

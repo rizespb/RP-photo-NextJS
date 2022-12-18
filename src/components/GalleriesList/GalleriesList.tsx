@@ -4,11 +4,11 @@ import GalleryPreview from './components/GalleryPreview'
 import styles from './GalleriesList.module.scss'
 import { IGalleriesListProps } from './GalleriesList.types'
 
-const GalleriesList: FC<IGalleriesListProps> = ({ galleries }) => {
+const GalleriesList: FC<IGalleriesListProps> = ({ galleryPreviews }) => {
   return (
     <section>
       <ul className={styles.list}>
-        {galleries.map((gallery) => (
+        {galleryPreviews.map((gallery) => (
           <GalleryPreview
             key={gallery.id}
             previewPhoto={gallery.previewPhoto}

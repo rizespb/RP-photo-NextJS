@@ -1,7 +1,7 @@
 import { TGalleryPreview } from '@types'
 
-export interface IGalleriesListPageProps {
+export interface ICategoryPageProps {
   title: string
   description: string
-  galleries: TGalleryPreview[]
+  galleryPreviews: TGalleryPreview[]
 }
