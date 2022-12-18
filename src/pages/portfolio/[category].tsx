@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticPathsResult, GetStaticProps, GetStaticPropsContext, NextPage } from 'next'
 
 import { Layout } from '@components'
-import { photosGalleries } from '@constants'
+import { photosGalleries, portfolioPageUrl } from '@constants'
 import { CategoryPage, ICategoryPageProps } from '@pageComponents'
 import { IParams } from '@types'
 
@@ -33,7 +33,7 @@ export const getStaticProps: GetStaticProps<ICategoryPageProps> = ({ params }: G
   const galleryPreviews = currentCategory.children.map((gallery) => {
     const { alias, id, previewPhoto, title } = gallery
 
-    return { id, link: `/portfolio/${categoryAlias}/${alias}`, previewPhoto, title }
+    return { id, link: `${portfolioPageUrl}/${categoryAlias}/${alias}`, previewPhoto, title }
   })
 
   return {

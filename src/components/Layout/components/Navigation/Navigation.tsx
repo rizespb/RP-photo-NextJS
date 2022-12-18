@@ -3,7 +3,7 @@ import { FC, useMemo, useState } from 'react'
 import { Collapse } from 'react-collapse'
 
 import { Link } from '@components/ui'
-import { photosGalleries } from '@constants'
+import { photosGalleries, portfolioPageUrl } from '@constants'
 import { ENavItems } from '@types'
 
 import { navItemsData } from './Navigation.constant'
@@ -58,7 +58,7 @@ const Navigation: FC = () => {
 
     const portfolioSubItems: INavItem[] = photosGalleries.map((gallery) => ({
       id: gallery.id,
-      link: `/portfolio/${gallery.alias}`,
+      link: `${portfolioPageUrl}/${gallery.alias}`,
       title: gallery.title,
     }))
 

@@ -2,17 +2,17 @@ import { GetStaticPaths, GetStaticPathsResult, GetStaticProps, GetStaticPropsCon
 import React from 'react'
 
 import { Layout } from '@components'
-import { photosGalleries } from '@constants'
+import { photosGalleries, portfolioPageUrl } from '@constants'
 import { GalleryPage, IGalleryPageProps } from '@pageComponents'
 import { IParams } from '@types'
 
-const Gallery: NextPage<IGalleryPageProps> = ({ photos }) => (
+const Gallery: NextPage<IGalleryPageProps> = (props) => (
   <Layout>
-    <GalleryPage photos={photos} />
+    <GalleryPage {...props} />
   </Layout>
 )
 
-export const getStaticProps: GetStaticProps = ({ params }: GetStaticPropsContext<IParams>) => {
+export const getStaticProps: GetStaticProps<IGalleryPageProps> = ({ params }: GetStaticPropsContext<IParams>) => {
   if (params === undefined) {
     return {
       notFound: true,
@@ -21,19 +21,29 @@ export const getStaticProps: GetStaticProps = ({ params }: GetStaticPropsContext
 
   const { category, gallery } = params
 
-  const photos = photosGalleries
-    .find(({ alias }) => alias === category)
-    ?.children.find(({ alias }) => alias === gallery)?.photos
+  const currentCategory = photosGalleries.find(({ alias }) => alias === category)
+  const parentCategoryTitle = currentCategory?.title
+  const parentCategoryLink = `${portfolioPageUrl}/${currentCategory?.alias}`
 
-  if (photos === undefined) {
+  const currentGallery = currentCategory?.children.find(({ alias }) => alias === gallery)
+
+  if (currentCategory === undefined || currentGallery === undefined) {
     return {
       notFound: true,
     }
   }
 
+  const { description, photos, title } = currentGallery
+
   return {
     props: {
+      description,
+      parentCategory: {
+        link: parentCategoryLink || '',
+        title: parentCategoryTitle || '',
+      },
       photos,
+      title,
     },
   }
 }

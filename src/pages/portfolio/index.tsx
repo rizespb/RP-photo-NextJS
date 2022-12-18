@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next'
 
 import { Layout } from '@components'
-import { photosGalleries } from '@constants'
+import { photosGalleries, portfolioPageUrl } from '@constants'
 import { IPortfolioPageProps, PortfolioPage } from '@pageComponents'
 
 const Porfolio: NextPage<IPortfolioPageProps> = ({ categoryPreviews }) => (
@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps<IPortfolioPageProps> = () => {
 
     return {
       id,
-      link: `/portfolio/${alias}`,
+      link: `${portfolioPageUrl}/${alias}`,
       previewPhoto,
       title,
     }

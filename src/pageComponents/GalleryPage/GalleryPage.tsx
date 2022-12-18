@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { FC, useState } from 'react'
 
 import { Header, Modal, Slider } from '@components'
@@ -8,7 +9,10 @@ import PhotoGallery from './components/PhotoGallery'
 import styles from './GalleryPage.module.scss'
 import { IGalleryPageProps } from './GalleryPage.types'
 
-const GalleryPage: FC<IGalleryPageProps> = ({ photos }) => {
+const GalleryPage: FC<IGalleryPageProps> = (props) => {
+  const { description, parentCategory, photos, title } = props
+  const router = useRouter()
+
   const { isComponentVisible, ref, setIsComponentVisible } = useComponentVisible<HTMLDivElement>(false)
   const [initialSlideIndex, setInitialSlideIndex] = useState(0)
 
@@ -18,7 +22,7 @@ const GalleryPage: FC<IGalleryPageProps> = ({ photos }) => {
   }
 
   const handleBackButtonClick = (): void => {
-    console.log('Back button was clicked')
+    router.push(parentCategory.link)
   }
 
   const handlePhotoClick = (id: number): void => {
@@ -31,9 +35,9 @@ const GalleryPage: FC<IGalleryPageProps> = ({ photos }) => {
   return (
     <>
       <Header
-        title="Галереря фото"
-        description="Какое-то описание галереии"
-        buttonText="Назад к разделу"
+        title={title}
+        description={description}
+        buttonText={`Назад к разделу ${parentCategory.title}`}
         onButtonClick={handleBackButtonClick}
         buttonIcon={EIcons.ArrowRight}
       />

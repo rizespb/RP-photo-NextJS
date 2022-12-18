@@ -21,7 +21,7 @@ export const portraitsGallery0: TGallery = {
     { id: 12, link: '/images/photos/portraits/gallery0/12.avif' },
     { id: 13, link: '/images/photos/portraits/gallery0/13.avif' },
   ],
-  previewPhoto: '/images/photos/nature/gallery0/3.avif',
+  previewPhoto: '/images/photos/portraits/gallery0/3.avif',
   title: 'Портреты 0',
 }
 
@@ -44,7 +44,7 @@ export const portraitsGallery1: TGallery = {
     { id: 10, link: '/images/photos/portraits/gallery1/10.avif' },
     { id: 11, link: '/images/photos/portraits/gallery1/11.avif' },
   ],
-  previewPhoto: '/images/photos/nature/gallery1/3.avif',
+  previewPhoto: '/images/photos/portraits/gallery1/3.avif',
   title: 'Портреты 1',
 }
 
@@ -71,6 +71,6 @@ export const portraitsGallery2: TGallery = {
     { id: 14, link: '/images/photos/portraits/gallery2/14.avif' },
     { id: 15, link: '/images/photos/portraits/gallery2/15.avif' },
   ],
-  previewPhoto: '/images/photos/nature/gallery2/3.avif',
+  previewPhoto: '/images/photos/portraits/gallery2/3.avif',
   title: 'Портреты 2',
 }
