@@ -18,6 +18,7 @@ export const familyGallery0: TGallery = {
     { id: 9, link: '/images/photos/family/gallery0/9.avif' },
     { id: 10, link: '/images/photos/family/gallery0/10.avif' },
     { id: 11, link: '/images/photos/family/gallery0/11.avif' },
+    { id: 12, link: '/images/photos/family/gallery0/Hor-900x450.jpg' },
   ],
   previewPhoto: '/images/photos/family/gallery0/3.avif',
   title: 'Семейные 0',

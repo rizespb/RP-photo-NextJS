@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 
 import { Header, Modal } from '@components'
+import ModalContent from '@components/ModalContent'
 import { EIcons } from '@constants'
 import { useComponentVisible } from '@hooks'
 
@@ -31,8 +32,10 @@ const ReviewPage: FC = () => {
       </section>
 
       {isComponentVisible && (
-        <Modal close={closeModal} mode="fullscreen" ref={ref} isStyledcontentArea>
-          <ReviewForm closeModal={closeModal} />
+        <Modal mode="fullscreen" ref={ref}>
+          <ModalContent closeModal={closeModal}>
+            <ReviewForm closeModal={closeModal} />
+          </ModalContent>
         </Modal>
       )}
     </>

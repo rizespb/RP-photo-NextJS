@@ -5,7 +5,7 @@ import styles from './MainPage.module.scss'
 
 const MainPage = () => (
   <section className={styles.wrapper}>
-    <Slider photos={mainPagePhotos} />
+    <Slider photos={mainPagePhotos} slideImageMode="cover" />
   </section>
 )
 

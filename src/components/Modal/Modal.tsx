@@ -1,15 +1,14 @@
 import classNames from 'classnames'
 import { forwardRef, useMemo } from 'react'
 
-import { EIcons, MODAL_DIV_ID, RIGHT_SIDE_MODAL_DIV_ID } from '@constants'
+import { MODAL_DIV_ID, RIGHT_SIDE_MODAL_DIV_ID } from '@constants'
 import { Portal } from '@hocs'
-import { Icon } from '@ui'
 
 import styles from './Modal.module.scss'
 import { IModalProps } from './Modal.types'
 
 const Modal = forwardRef<HTMLDivElement, IModalProps>(function Modal(props, ref) {
-  const { children, close, contentAreaClassName = '', isStyledcontentArea, mode } = props
+  const { children, contentWrapperClassName = '', mode } = props
 
   const isFullscreenModal = mode === 'fullscreen'
 
@@ -24,18 +23,15 @@ const Modal = forwardRef<HTMLDivElement, IModalProps>(function Modal(props, ref)
     [styles['container--rightSide']]: !isFullscreenModal,
   })
 
-  const contentAreaClasses = classNames({
-    [styles.contentArea]: true,
-    [styles['contentArea--decorated']]: isStyledcontentArea,
-    [contentAreaClassName]: true,
+  const contentWrapperClasses = classNames({
+    [styles.contentWrapper]: true,
+    [contentWrapperClassName]: contentWrapperClassName,
   })
 
   return (
     <Portal portalContainerId={portalContainerId}>
       <div className={containerClasses}>
-        <div className={contentAreaClasses} ref={ref}>
-          <Icon name={EIcons.Close} className={styles.close} onClick={close} />
-
+        <div ref={ref} className={contentWrapperClasses}>
           {children}
         </div>
       </div>

@@ -13,7 +13,7 @@ import styles from './Slider.module.scss'
 import { ISliderProps } from './Slider.types'
 
 const Slider: FC<ISliderProps> = (props) => {
-  const { className = '', initialSlideIndex = 0, photos } = props
+  const { className = '', initialSlideIndex = 0, photos, slideImageMode } = props
 
   const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
@@ -26,6 +26,11 @@ const Slider: FC<ISliderProps> = (props) => {
   const rightArrowIconClasses = classNames({
     [styles.arrowIcon]: true,
     [styles['arrowIcon--right']]: true,
+  })
+
+  const slideImageClasses = classNames({
+    [styles['slideImage--cover']]: slideImageMode === 'cover',
+    [styles['slideImage--contain']]: slideImageMode === 'contain',
   })
 
   return (
@@ -54,7 +59,7 @@ const Slider: FC<ISliderProps> = (props) => {
             src={link}
             alt=""
             fill={true}
-            className={styles.slideImage}
+            className={slideImageClasses}
             sizes="(max-width: 768px) 100vw,
               80vw"
           />

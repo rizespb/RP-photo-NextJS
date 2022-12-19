@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { FC, useState } from 'react'
 
-import { Header, Modal, Slider } from '@components'
+import { Header, Icon, Modal, Slider } from '@components'
 import { EIcons } from '@constants'
 import { useComponentVisible } from '@hooks'
 
@@ -47,14 +47,15 @@ const GalleryPage: FC<IGalleryPageProps> = (props) => {
       </section>
 
       {isComponentVisible && (
-        <Modal
-          mode="rightSide"
-          close={closeModal}
-          isStyledcontentArea={false}
-          ref={ref}
-          contentAreaClassName={styles.modalContentArea}
-        >
-          <Slider photos={photos} initialSlideIndex={initialSlideIndex} className={styles.slider} />
+        <Modal mode="rightSide" ref={ref} contentWrapperClassName={styles.contentWrapper}>
+          <Slider
+            photos={photos}
+            initialSlideIndex={initialSlideIndex}
+            className={styles.slider}
+            slideImageMode="contain"
+          />
+
+          <Icon name={EIcons.Close} className={styles.close} onClick={closeModal} />
         </Modal>
       )}
     </>

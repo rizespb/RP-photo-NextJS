@@ -1,20 +1,16 @@
+@import '/src/styles/variables/colors.scss';
 @import '/src/styles/variables/common.scss';
 
-.modalContentArea {
-  width: 100%;
-
-  span {
-    opacity: $slider-controls-opacity;
-  }
-}
-
 .contentWrapper {
-  flex: 1;
-  max-width: 100%;
-}
+  position: relative;
 
-.slider {
-  height: 90vh;
+  max-height: 100vh;
+  overflow-y: auto;
+
+  padding: 70px 50px 50px;
+  width: 650px;
+
+  background-color: $color-modal-bg;
 }
 
 .close {
@@ -22,7 +18,6 @@
   top: 20px;
   right: 20px;
 
-  opacity: $slider-controls-opacity;
   cursor: pointer;
   z-index: 11;
 
