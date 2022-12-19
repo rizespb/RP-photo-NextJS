@@ -1,0 +1,61 @@
+@import '/src/styles/variables/colors.scss';
+@import '/src/styles/variables/media.scss';
+@import '/src/styles/mixins/media.scss';
+
+.menuLine {
+  width: 32px;
+  height: 4px;
+
+  background-color: $color-menu-button;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+
+  cursor: pointer;
+
+  .menuLines {
+    position: absolute;
+
+    @extend .menuLine;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+
+      @extend .menuLine;
+    }
+
+    &--burger {
+      top: 50%;
+      transform: translateY(-50%);
+
+      &::before {
+        top: -10px;
+      }
+
+      &::after {
+        top: 10px;
+      }
+    }
+
+    &--close {
+      background-color: transparent;
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

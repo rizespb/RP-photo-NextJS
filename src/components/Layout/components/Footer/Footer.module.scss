@@ -1,4 +1,6 @@
 @import '/src/styles/variables/common.scss';
+@import '/src/styles/variables/media.scss';
+@import '/src/styles/mixins/media.scss';
 
 .footer {
   display: flex;
@@ -9,12 +11,21 @@
   &__text {
     display: flex;
     align-items: center;
+
+    @include respond-to(0, lg) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include respond-to(0, lg) {
+    flex-direction: column;
+    margin-top: 20px;
   }
 }
 
 .contacts {
   display: flex;
-  column-gap: 30px;
+  gap: 30px;
 
   &__link {
     display: flex;
@@ -25,5 +36,10 @@
     &:hover {
       opacity: $icons-opacity;
     }
+  }
+
+  @include respond-to(0, md) {
+    flex-direction: column;
+    gap: 20px;
   }
 }

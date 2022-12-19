@@ -2,13 +2,13 @@ import { FC } from 'react'
 
 import { Icon, Link } from '@ui'
 
-import { contactsData } from './Footer.constants'
+import { contactsData, TEXTS } from './Footer.constants'
 import styles from './Footer.module.scss'
 
 const Footer: FC = () => {
   return (
     <footer className={styles.footer}>
-      <span className={styles.footer__text}>Фотограф Катерина Петрова</span>
+      <span className={styles.footer__text}>{TEXTS.label}</span>
 
       <div className={styles.contacts}>
         {contactsData.map((contact) => (

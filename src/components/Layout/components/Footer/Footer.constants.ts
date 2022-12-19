@@ -11,3 +11,7 @@ export const contactsData = [
     type: EIcons.VK,
   },
 ]
+
+export const TEXTS = {
+  label: 'Фотограф Катерина Петрова',
+}
