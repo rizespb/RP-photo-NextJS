@@ -1,9 +1,16 @@
 @import '/src/styles/variables/common.scss';
+@import '/src/styles/variables/layout.scss';
+@import '/src/styles/variables/media.scss';
+@import '/src/styles/mixins/media.scss';
 
 $arrowOffset: 30px;
 
 .slider {
   height: 100vh;
+
+  @include respond-to(0, md) {
+    height: calc(100vh - $header-height);
+  }
 }
 
 .slideImage {

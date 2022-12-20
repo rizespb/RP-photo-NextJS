@@ -1,4 +1,6 @@
 @import '/src/styles/variables/text.scss';
+@import '/src/styles/variables/media.scss';
+@import '/src/styles/mixins/media.scss';
 
 .review {
   display: flex;
@@ -6,6 +8,11 @@
 
   &--imageLeft {
     flex-direction: row-reverse;
+  }
+
+  @include respond-to(0, sm) {
+    flex-direction: column;
+    gap: 0;
   }
 }
 
@@ -15,6 +22,10 @@
   row-gap: 30px;
 
   flex-basis: 50%;
+
+  @include respond-to(0, sm) {
+    gap: 15px;
+  }
 
   &__title {
     margin-top: 20px;
@@ -40,6 +51,12 @@
   position: relative;
   flex-basis: 50%;
   height: 330px;
+
+  @include respond-to(0, sm) {
+    flex-direction: column;
+    flex-basis: auto;
+    order: -1;
+  }
 }
 
 .image {

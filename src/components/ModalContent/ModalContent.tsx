@@ -8,7 +8,7 @@ import { IModalContentProps } from './ModalContent.types'
 
 const ModalContent: FC<IModalContentProps> = ({ children, closeModal }) => {
   return (
-    <div className={styles.contentWrapper}>
+    <div className={styles.modalContent}>
       <Icon name={EIcons.Close} className={styles.close} onClick={closeModal} />
 
       {children}

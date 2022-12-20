@@ -1,5 +1,7 @@
 @import '/src/styles/variables/colors.scss';
 @import '/src/styles/variables/text.scss';
+@import '/src/styles/variables/media.scss';
+@import '/src/styles/mixins/media.scss';
 
 .form {
   position: relative;
@@ -9,8 +11,12 @@
 
   &__bottom {
     position: relative;
-    display: flex;
-    justify-content: space-between;
+
+    @include respond-to(0, xs) {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 
   &__reCaptchaWrapper {
@@ -19,6 +25,14 @@
     right: -45px;
 
     transform: scale(0.7);
+
+    @include respond-to(0, xs) {
+      position: relative;
+      top: auto;
+      right: auto;
+
+      transform: scale(0.9);
+    }
   }
 
   &__submitError {

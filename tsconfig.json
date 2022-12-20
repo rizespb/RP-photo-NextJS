@@ -12,7 +12,6 @@
       "@hooks": ["hooks/index"],
       "@hocs": ["hocs/index"],
       "@ui": ["components/ui/index"],
-      "@data": ["data/index"],
       "@types": ["types/index"],
       "@api": ["api/index"]
     },

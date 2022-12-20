@@ -1,5 +1,5 @@
 export interface IMenuButtonProps {
   className?: string
   onClick: () => void
-  isMenuOpened: boolean
+  state?: 'burger' | 'close'
 }

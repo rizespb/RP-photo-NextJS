@@ -5,17 +5,17 @@ import styles from './MenuButton.module.scss'
 import { IMenuButtonProps } from './MenuButton.types'
 
 const MenuButton: FC<IMenuButtonProps> = (props) => {
-  const { className = '', isMenuOpened, onClick } = props
+  const { className = '', onClick, state = 'burger' } = props
 
   const wrapperClasses = classNames({
-    [styles.wrapper]: true,
+    [styles.menuButton]: true,
     [className]: true,
   })
 
   const menuLinesClasses = classNames({
     [styles.menuLines]: true,
-    [styles['menuLines--burger']]: !isMenuOpened,
-    [styles['menuLines--close']]: isMenuOpened,
+    [styles['menuLines--burger']]: state === 'burger',
+    [styles['menuLines--close']]: state === 'close',
   })
 
   return (

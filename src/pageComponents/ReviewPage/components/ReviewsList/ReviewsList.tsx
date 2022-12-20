@@ -1,6 +1,5 @@
-import { reviewsData } from '@data'
-
 import Review from '../Review'
+import { reviewsData } from './ReviewsList.constants'
 import styles from './ReviewsList.module.scss'
 
 const ReviewsList = () => {
