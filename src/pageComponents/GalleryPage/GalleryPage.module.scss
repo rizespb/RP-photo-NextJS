@@ -1,4 +1,5 @@
 @import '/src/styles/variables/common.scss';
+@import '/src/styles/mixins/hover.scss';
 
 .modalContentArea {
   width: 100%;
@@ -26,7 +27,10 @@
   cursor: pointer;
   z-index: 11;
 
-  &:hover,
+  @include any-hover {
+    opacity: $icons-opacity;
+  }
+
   &:active {
     opacity: $icons-opacity;
   }

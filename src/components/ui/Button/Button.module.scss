@@ -1,5 +1,7 @@
 @import '/src/styles/variables/text.scss';
 @import '/src/styles/variables/common.scss';
+@import '/src/styles/extends/text.scss';
+@import '/src/styles/mixins/hover.scss';
 
 .button {
   flex-shrink: 0;
@@ -14,7 +16,12 @@
 
   cursor: pointer;
 
-  &:hover,
+  @extend %user-select-none;
+
+  @include any-hover {
+    opacity: $icons-opacity;
+  }
+
   &:active {
     opacity: $icons-opacity;
   }

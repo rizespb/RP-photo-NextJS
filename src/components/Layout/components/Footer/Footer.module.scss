@@ -1,19 +1,28 @@
 @import '/src/styles/variables/common.scss';
 @import '/src/styles/variables/media.scss';
 @import '/src/styles/mixins/media.scss';
+@import '/src/styles/mixins/hover.scss';
 
 .footer {
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
-  padding: 10px 20px;
+  padding: 10px 0;
+
+  &--paddings {
+    padding: 0 50px;
+
+    @include respond-to(0, md) {
+      padding: 0 20px;
+    }
+  }
 
   &__text {
     display: flex;
     align-items: center;
 
     @include respond-to(0, lg) {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
   }
 
@@ -33,12 +42,16 @@
     column-gap: 10px;
     transition: all 0.3s;
 
-    &:hover {
+    @include any-hover {
+      opacity: $icons-opacity;
+    }
+
+    &:active {
       opacity: $icons-opacity;
     }
   }
 
-  @include respond-to(0, md) {
+  @include respond-to(0, lg) {
     flex-direction: column;
     gap: 20px;
   }

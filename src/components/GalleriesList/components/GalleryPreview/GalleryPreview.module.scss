@@ -1,11 +1,18 @@
 @import '/src/styles/variables/common.scss';
+@import '/src/styles/mixins/hover.scss';
 
 .galleryPreview {
-  &:hover .photo {
-    transform: scale(1.1);
+  @include any-hover {
+    .photo {
+      transform: scale(1.1);
+    }
+
+    .title {
+      opacity: $links-opacity;
+    }
   }
 
-  &:hover .title {
+  &:active .title {
     opacity: $links-opacity;
   }
 }

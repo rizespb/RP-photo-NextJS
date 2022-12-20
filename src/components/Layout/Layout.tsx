@@ -13,11 +13,11 @@ import { ILayoutProps } from './Layout.types'
 const Layout: FC<ILayoutProps> = ({ children, withPaddings = true }) => {
   const [isMenuOpened, setIsMenuOpened] = useState(false)
 
-  const { asPath } = useRouter()
+  const router = useRouter()
 
   useEffect(() => {
     setIsMenuOpened(false)
-  }, [asPath])
+  }, [router])
 
   const handleMenuButtonClick = (): void => setIsMenuOpened((prev) => !prev)
 
@@ -52,7 +52,7 @@ const Layout: FC<ILayoutProps> = ({ children, withPaddings = true }) => {
       <div className={rightClasses}>
         <main className={styles.content}>{children}</main>
 
-        <Footer />
+        <Footer withInnerPaddings={!withPaddings} />
 
         <div id={RIGHT_SIDE_MODAL_DIV_ID}></div>
       </div>

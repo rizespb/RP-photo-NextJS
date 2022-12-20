@@ -41,6 +41,7 @@ const Slider: FC<ISliderProps> = (props) => {
       loop={true}
       autoplay={{ delay: 3000 }}
       speed={1000}
+      spaceBetween={30}
       navigation={{
         nextEl: navigationNextRef.current,
         prevEl: navigationPrevRef.current,

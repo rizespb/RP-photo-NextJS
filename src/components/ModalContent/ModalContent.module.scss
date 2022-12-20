@@ -1,5 +1,6 @@
 @import '/src/styles/variables/colors.scss';
 @import '/src/styles/variables/common.scss';
+@import '/src/styles/mixins/hover.scss';
 
 .modalContent {
   position: relative;
@@ -22,7 +23,10 @@
   cursor: pointer;
   z-index: 11;
 
-  &:hover,
+  @include any-hover {
+    opacity: $icons-opacity;
+  }
+
   &:active {
     opacity: $icons-opacity;
   }
