@@ -11,6 +11,7 @@ import Email from '@assets/icons/email.svg'
 import Feather from '@assets/icons/feather.svg'
 import Message from '@assets/icons/message.svg'
 import Phone from '@assets/icons/phone.svg'
+import Up from '@assets/icons/up.svg'
 import Vk from '@assets/icons/vk.svg'
 import { EIcons } from '@constants'
 
@@ -27,4 +28,5 @@ export const iconsMap: Record<EIcons, FC> = {
   [EIcons.Close]: Close,
   [EIcons.ArrowLeftSlider]: ArrowLeftSlider,
   [EIcons.ArrowRightSlider]: ArrowRightSlider,
+  [EIcons.Up]: Up,
 }

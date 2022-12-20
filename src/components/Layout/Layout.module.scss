@@ -149,3 +149,17 @@
 .content {
   flex-grow: 1;
 }
+
+.upButtonWrapper {
+  position: fixed;
+
+  bottom: 10px;
+  left: 40px;
+
+  z-index: 1000;
+
+  @include respond-to(0, md) {
+    left: auto;
+    right: 40px;
+  }
+}

@@ -7,6 +7,7 @@ import { RIGHT_SIDE_MODAL_DIV_ID } from '@constants'
 
 import Footer from './components/Footer'
 import Navigation from './components/Navigation'
+import UpButton from './components/UpButton'
 import styles from './Layout.module.scss'
 import { ILayoutProps } from './Layout.types'
 
@@ -56,6 +57,10 @@ const Layout: FC<ILayoutProps> = ({ children, withPaddings = true }) => {
 
         <div id={RIGHT_SIDE_MODAL_DIV_ID}></div>
       </div>
+
+      <span className={styles.upButtonWrapper}>
+        <UpButton />
+      </span>
     </div>
   )
 }

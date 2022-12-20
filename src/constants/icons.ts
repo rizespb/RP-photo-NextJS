@@ -11,4 +11,5 @@ export const enum EIcons {
   Message = 'message',
   Feather = 'feather',
   Close = 'close',
+  Up = 'up',
 }
