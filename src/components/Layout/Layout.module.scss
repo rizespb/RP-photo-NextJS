@@ -4,6 +4,7 @@
 @import '/src/styles/variables/media.scss';
 @import '/src/styles/mixins/media.scss';
 @import '/src/styles/mixins/hide-scrollBar.scss';
+@import '/src/styles/extends/text.scss';
 
 .container {
   display: block;
@@ -25,7 +26,7 @@
   overflow: hidden;
   transition: all 0.5s;
 
-  z-index: 100;
+  z-index: 10;
 
   @include respond-to(0, md) {
     position: sticky;
@@ -48,7 +49,6 @@
   overflow-y: auto;
 
   background-color: $color-bg-menu;
-  z-index: 1000;
 
   @include hide-scrollBar;
 
@@ -117,7 +117,7 @@
 .menuButtonWrapper {
   display: none;
 
-  z-index: 10000;
+  z-index: 10;
 
   @include respond-to(0, md) {
     display: inline-block;
@@ -156,7 +156,9 @@
   bottom: 10px;
   left: 40px;
 
-  z-index: 1000;
+  z-index: 10;
+
+  @extend %user-select-none;
 
   @include respond-to(0, md) {
     left: auto;

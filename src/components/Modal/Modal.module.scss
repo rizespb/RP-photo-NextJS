@@ -19,7 +19,7 @@
   overflow: hidden;
 
   background-color: $color-modal-container-bg;
-  z-index: 1000;
+  z-index: 100;
 
   @include blur(5px);
 

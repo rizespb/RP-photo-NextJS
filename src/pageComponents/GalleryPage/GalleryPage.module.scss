@@ -25,7 +25,7 @@
 
   opacity: $slider-controls-opacity;
   cursor: pointer;
-  z-index: 11;
+  z-index: 10;
 
   @include any-hover {
     opacity: $icons-opacity;

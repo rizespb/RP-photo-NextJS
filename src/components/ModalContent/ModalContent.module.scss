@@ -1,6 +1,7 @@
 @import '/src/styles/variables/colors.scss';
 @import '/src/styles/variables/common.scss';
 @import '/src/styles/mixins/hover.scss';
+@import '/src/styles/mixins/hide-scrollBar.scss';
 
 .modalContent {
   position: relative;
@@ -13,6 +14,8 @@
   padding: 70px 50px 50px;
 
   background-color: $color-modal-bg;
+
+  @include hide-scrollBar();
 }
 
 .close {
@@ -21,7 +24,7 @@
   right: 20px;
 
   cursor: pointer;
-  z-index: 11;
+  z-index: 10;
 
   @include any-hover {
     opacity: $icons-opacity;

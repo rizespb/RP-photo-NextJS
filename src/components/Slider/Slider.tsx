@@ -3,7 +3,7 @@ import 'swiper/css'
 import classNames from 'classnames'
 import Image from 'next/image'
 import { FC, useRef } from 'react'
-import { Autoplay, Navigation } from 'swiper'
+import { Autoplay, Keyboard, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { Icon } from '@components'
@@ -35,13 +35,17 @@ const Slider: FC<ISliderProps> = (props) => {
 
   return (
     <Swiper
-      modules={[Autoplay, Navigation]}
+      modules={[Autoplay, Navigation, Keyboard]}
       slidesPerView={1}
       initialSlide={initialSlideIndex}
       loop={true}
       autoplay={{ delay: 3000 }}
       speed={1000}
       spaceBetween={30}
+      keyboard={{
+        enabled: true,
+        onlyInViewport: false,
+      }}
       navigation={{
         nextEl: navigationNextRef.current,
         prevEl: navigationPrevRef.current,
