@@ -7,7 +7,7 @@ import styles from './TextArea.module.scss'
 import { ITextAreaProps } from './TextArea.types'
 
 const TextArea = forwardRef<HTMLTextAreaElement, ITextAreaProps>((props, ref) => {
-  const { className, error, labelText, onBlur, onFocus, rows = 5, value = '', ...rest } = props
+  const { className, error, labelBGColor, labelText, onBlur, onFocus, rows = 5, value = '', ...rest } = props
 
   const [labelPosition, setLabelPosition] = useState<TLabelPosition>(() => (value ? 'top' : 'centered'))
 
@@ -34,6 +34,8 @@ const TextArea = forwardRef<HTMLTextAreaElement, ITextAreaProps>((props, ref) =>
     [styles['labelText--top']]: labelPosition === 'top',
     [styles['labelText--centered']]: labelPosition === 'centered',
     [styles['labelText--error']]: !!error,
+    [styles['labelText--bgWhite']]: labelBGColor === 'white',
+    [styles['labelText--bgBeige']]: labelBGColor === 'beige',
   })
 
   const textAreaClasses = classNames({

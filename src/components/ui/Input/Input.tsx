@@ -7,7 +7,7 @@ import styles from './Input.module.scss'
 import { IInputProps } from './Input.types'
 
 const Input = forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
-  const { className, error, labelText, onBlur, onFocus, value = '', ...rest } = props
+  const { className, error, labelBGColor, labelText, onBlur, onFocus, value = '', ...rest } = props
 
   const [labelPosition, setLabelPosition] = useState<TLabelPosition>(() => (value ? 'top' : 'centered'))
 
@@ -31,9 +31,11 @@ const Input = forwardRef<HTMLInputElement, IInputProps>((props, ref) => {
 
   const labelTextClasses = classNames({
     [styles.labelText]: true,
-    [styles['labelText--top']]: labelPosition === 'top',
-    [styles['labelText--centered']]: labelPosition === 'centered',
+    [styles['labelText--top']]: labelPosition === 'top' || value,
+    [styles['labelText--centered']]: labelPosition === 'centered' && !value,
     [styles['labelText--error']]: !!error,
+    [styles['labelText--bgWhite']]: labelBGColor === 'white',
+    [styles['labelText--bgBeige']]: labelBGColor === 'beige',
   })
 
   const inputClasses = classNames({

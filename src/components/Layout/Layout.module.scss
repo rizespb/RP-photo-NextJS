@@ -134,10 +134,10 @@
   background-color: $colog-bg-primary;
 
   &--paddings {
-    padding: 40px 50px;
+    padding: 40px 50px 0;
 
     @include respond-to(0, md) {
-      padding: 20px;
+      padding: 20px 20px 0;
     }
   }
 

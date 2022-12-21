@@ -74,7 +74,7 @@ const ReviewForm: FC<IReviewFormProps> = ({ closeModal }) => {
             const { error, invalid, isDirty, isTouched } = fieldState
             /* eslint-enable @typescript-eslint/no-unused-vars */
 
-            return <Input {...field} type="text" labelText="Имя" error={error?.message} />
+            return <Input {...field} type="text" labelText="Имя" error={error?.message} labelBGColor="white" />
           }}
         />
 
@@ -84,7 +84,7 @@ const ReviewForm: FC<IReviewFormProps> = ({ closeModal }) => {
           render={({ field, fieldState }) => {
             const { error } = fieldState
 
-            return <Input {...field} type="text" labelText="Email" error={error?.message} />
+            return <Input {...field} type="text" labelText="Email" error={error?.message} labelBGColor="white" />
           }}
         />
 
@@ -94,7 +94,7 @@ const ReviewForm: FC<IReviewFormProps> = ({ closeModal }) => {
           render={({ field, fieldState }) => {
             const { error } = fieldState
 
-            return <TextArea {...field} labelText="Ваше сообщение" error={error?.message} />
+            return <TextArea {...field} labelText="Ваше сообщение" error={error?.message} labelBGColor="white" />
           }}
         />
 

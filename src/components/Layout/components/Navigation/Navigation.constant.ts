@@ -82,49 +82,7 @@ export const navItemsData: INavItem[] = [
   },
   {
     id: 6,
-    link: '/menu6',
-    title: 'Меню 6',
+    link: '/contacts',
+    title: 'Контакты',
   },
-  // {
-  //   id: 7,
-  //   subItems: [
-  //     {
-  //       id: 70,
-  //       link: '/menu70',
-  //       title: 'Меню 70',
-  //     },
-  //     {
-  //       id: 71,
-  //       link: '/menu71',
-  //       title: 'Меню 71',
-  //     },
-  //     {
-  //       id: 72,
-  //       link: '/menu72',
-  //       title: 'Меню 72',
-  //     },
-  //   ],
-  //   title: 'Меню 7',
-  // },
-  // {
-  //   id: 8,
-  //   subItems: [
-  //     {
-  //       id: 80,
-  //       link: '/menu80',
-  //       title: 'Меню 80',
-  //     },
-  //     {
-  //       id: 81,
-  //       link: '/menu81',
-  //       title: 'Меню 81',
-  //     },
-  //   ],
-  //   title: 'Меню 8',
-  // },
-  // {
-  //   id: 9,
-  //   link: '/menu9',
-  //   title: 'Меню 9',
-  // },
 ]

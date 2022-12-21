@@ -1,6 +1,7 @@
 @import '/src/styles/variables/colors.scss';
 @import '/src/styles/variables/text.scss';
 @import '/src/styles/mixins/texts.scss';
+@import '/src/styles/extends/form.scss';
 
 $error-block-heigth: 19px;
 
@@ -12,11 +13,6 @@ $textArea-padding-top: 15px;
   padding-bottom: calc($error-block-heigth + 3px);
 }
 
-.label {
-  position: relative;
-  display: block;
-}
-
 .textArea {
   width: 100%;
   padding: $textArea-padding-top 10px;
@@ -25,6 +21,7 @@ $textArea-padding-top: 15px;
   border-bottom: 1px solid $color-borders;
   outline: none;
   resize: none;
+  background: transparent;
 
   font-family: $font-primary;
   font-size: 16px;
@@ -39,13 +36,19 @@ $textArea-padding-top: 15px;
   &--error {
     border: 1px solid $color-borders-error;
   }
+
+  @extend %noAutofillBackground;
+}
+
+.label {
+  position: relative;
+  display: block;
 }
 
 .labelText {
   position: absolute;
   padding: 4px;
 
-  background-color: $color-modal-bg;
   transition: all 0.3s;
 
   &--centered {
@@ -62,6 +65,14 @@ $textArea-padding-top: 15px;
 
   &--error {
     color: $color-font-error;
+  }
+
+  &--bgWhite {
+    background-color: $color-modal-bg;
+  }
+
+  &--bgBeige {
+    background-color: $colog-bg-primary;
   }
 }
 
