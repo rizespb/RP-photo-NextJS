@@ -1,5 +1,6 @@
 @import '/src/styles/variables/text.scss';
 @import '/src/styles/variables/common.scss';
+@import '/src/styles/variables/colors.scss';
 @import '/src/styles/extends/text.scss';
 @import '/src/styles/mixins/hover.scss';
 
@@ -8,6 +9,7 @@
   display: flex;
   align-items: center;
   height: 40px;
+  padding: 5px 10px;
   border: none;
   background: transparent;
 
@@ -29,6 +31,14 @@
   &:disabled {
     opacity: $icons-opacity;
     cursor: default;
+  }
+
+  &--bordered {
+    border: 1px solid $color-button-borders;
+
+    &:disabled {
+      border-color: $color-button-disabled-borders;
+    }
   }
 }
 

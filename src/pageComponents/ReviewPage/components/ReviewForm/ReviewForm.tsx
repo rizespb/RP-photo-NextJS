@@ -99,7 +99,7 @@ const ReviewForm: FC<IReviewFormProps> = ({ closeModal }) => {
         />
 
         <div className={styles.form__bottom}>
-          <Button text="Отправить" type="submit" disabled={isSubmitButtonDisabled} />
+          <Button text="Отправить" type="submit" disabled={isSubmitButtonDisabled} isBordered />
 
           <div className={styles.form__reCaptchaWrapper}>
             <ReCaptcha sitekey={envVars.RECAPTCHA_SITE_KEY} ref={captchaRef} onChange={handleRecaptchaChange} />
@@ -119,6 +119,7 @@ const ReviewForm: FC<IReviewFormProps> = ({ closeModal }) => {
                 disabled={isSubmitButtonDisabled}
                 className={styles.successContent__button}
                 onClick={closeModal}
+                isBordered
               />
             </div>
           </StatusScreen>
