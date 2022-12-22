@@ -4,8 +4,10 @@ import { FC, useState } from 'react'
 import { Header, Icon, Modal, Slider } from '@components'
 import { EIcons } from '@constants'
 import { useComponentVisible } from '@hooks'
+import { getTemplatedString } from '@utils'
 
 import PhotoGallery from './components/PhotoGallery'
+import { TEXTS } from './GalleryPage.constants'
 import styles from './GalleryPage.module.scss'
 import { IGalleryPageProps } from './GalleryPage.types'
 
@@ -37,7 +39,7 @@ const GalleryPage: FC<IGalleryPageProps> = (props) => {
       <Header
         title={title}
         description={description}
-        buttonText={`Назад к разделу ${parentCategory.title}`}
+        buttonText={getTemplatedString(TEXTS.backButton, { parentPage: parentCategory.title })}
         onButtonClick={handleBackButtonClick}
         buttonIcon={EIcons.ArrowRight}
       />

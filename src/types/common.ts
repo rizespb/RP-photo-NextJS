@@ -19,7 +19,7 @@ export interface IPhoto {
   link: string
 }
 
-export type TStringOrElement = string | ReactElement
+export type TStringOrElement = string | ReactElement | (string | ReactElement)[]
 
 export interface ICategory {
   alias: EGalleries

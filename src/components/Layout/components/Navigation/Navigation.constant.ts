@@ -10,29 +10,13 @@ export const navItemsData: INavItem[] = [
   },
   {
     id: 1,
-    subItems: [
-      {
-        id: 10,
-        link: '/menu10',
-        title: 'Меню 10',
-      },
-      {
-        id: 11,
-        link: '/menu11',
-        title: 'Меню 11',
-      },
-      {
-        id: 12,
-        link: '/menu12',
-        title: 'Меню 12',
-      },
-    ],
-    title: 'Меню 1!!!',
+    link: '/review',
+    title: ENavItems.Reviews,
   },
   {
     id: 2,
-    link: '/review',
-    title: ENavItems.Reviews,
+    link: '/contacts',
+    title: 'Контакты',
   },
   {
     id: 3,
@@ -52,28 +36,44 @@ export const navItemsData: INavItem[] = [
         link: '/menu32',
         title: 'Меню 32',
       },
-      {
-        id: 33,
-        link: '/menu33',
-        title: 'Меню 33',
-      },
-      {
-        id: 34,
-        link: '/menu34',
-        title: 'Меню 34',
-      },
-      {
-        id: 35,
-        link: '/menu35',
-        title: 'Меню 35',
-      },
     ],
     title: 'Меню 3!!!',
   },
   {
     id: 4,
-    link: '/menu4',
-    title: 'Меню 4',
+    subItems: [
+      {
+        id: 40,
+        link: '/menu40',
+        title: 'Меню 40',
+      },
+      {
+        id: 41,
+        link: '/menu41',
+        title: 'Меню 41',
+      },
+      {
+        id: 42,
+        link: '/menu42',
+        title: 'Меню 42',
+      },
+      {
+        id: 43,
+        link: '/menu43',
+        title: 'Меню 43',
+      },
+      {
+        id: 44,
+        link: '/menu44',
+        title: 'Меню 44',
+      },
+      {
+        id: 45,
+        link: '/menu45',
+        title: 'Меню 45',
+      },
+    ],
+    title: 'Меню 4!!!',
   },
   {
     id: 5,
@@ -82,7 +82,7 @@ export const navItemsData: INavItem[] = [
   },
   {
     id: 6,
-    link: '/contacts',
-    title: 'Контакты',
+    link: '/menu6',
+    title: 'Меню 6',
   },
 ]

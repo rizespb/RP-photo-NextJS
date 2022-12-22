@@ -20,7 +20,7 @@ const UpButton: FC = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  }, [isBrowser])
 
   const scrollToTop = () => {
     isBrowser &&

@@ -13,7 +13,8 @@
       "@hocs": ["hocs/index"],
       "@ui": ["components/ui/index"],
       "@types": ["types/index"],
-      "@api": ["api/index"]
+      "@api": ["api/index"],
+      "@utils": ["utils/index"]
     },
     /* Visit https://aka.ms/tsconfig to read more about this file */
 

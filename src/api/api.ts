@@ -7,11 +7,11 @@ import { ERequestStatus } from '@types'
 import { ISendReviewResponse } from './api.types'
 
 class Api {
-  static sendReview = async (values: FieldValues, token: string): Promise<ISendReviewResponse> => {
+  static sendMessage = async (values: FieldValues, token: string): Promise<ISendReviewResponse> => {
     try {
       await send(
         envVars.SENDEMAIL_DEFAULT_SERVICE,
-        envVars.SENDEMAIL_REVIEW_TEMPLATE_ID,
+        envVars.SENDEMAIL_MESSAGE_TEMPLATE_ID,
         {
           ...values,
           'g-recaptcha-response': token,

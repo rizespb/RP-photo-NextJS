@@ -9,19 +9,16 @@ import { Button, Input, TextArea } from '@components/ui'
 import { envVars } from '@constants'
 import { ERequestStatus } from '@types'
 
-import { TEXTS } from './ReviewForm.constants'
-import styles from './ReviewForm.module.scss'
-import { reviewFormValidationSchema } from './ReviewForm.schema'
-import { IReviewFormProps } from './ReviewForm.types'
+import { TEXTS } from './ContactForm.constant'
+import styles from './ContactForm.module.scss'
+import { contactFormValidationSchema } from './ContactsPage.schema'
 
 const captchaRef = createRef<ReCaptcha>()
 
-const ReviewForm: FC<IReviewFormProps> = ({ closeModal }) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { control, formState, handleSubmit, register, reset, setValue } = useForm({
-    // Запускать валидацию и при первой потере фокуса onBlur и при вводе данных
+const ContactForm: FC = () => {
+  const { control, handleSubmit, reset } = useForm({
     mode: 'onTouched',
-    resolver: yupResolver(reviewFormValidationSchema),
+    resolver: yupResolver(contactFormValidationSchema),
   })
 
   const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState<boolean>(true)
@@ -73,48 +70,46 @@ const ReviewForm: FC<IReviewFormProps> = ({ closeModal }) => {
       {isLoading && <Loader />}
 
       {!isSuccess && (
-        <form className={styles.form} onSubmit={handleSubmit(handleFormSubmit)} ref={formRef}>
-          <Controller
-            name="name"
-            control={control}
-            // @TODO для экспериментов. Удалить перед деплоем
-            /* eslint-disable @typescript-eslint/no-unused-vars */
-            render={({ field, fieldState, formState }) => {
-              const { name, onBlur, onChange, ref, value } = field
-              const { error, invalid, isDirty, isTouched } = fieldState
-              /* eslint-enable @typescript-eslint/no-unused-vars */
+        <form onSubmit={handleSubmit(handleFormSubmit)} className={styles.form} ref={formRef}>
+          <fieldset className={styles.form__credentials}>
+            <Controller
+              name="name"
+              control={control}
+              render={({ field, fieldState }) => {
+                const { error } = fieldState
 
-              return (
-                <Input
-                  {...field}
-                  type="text"
-                  labelText={TEXTS.inputNameLabel}
-                  error={error?.message}
-                  labelBGColor="white"
-                  autoComplete="off"
-                />
-              )
-            }}
-          />
+                return (
+                  <Input
+                    {...field}
+                    type="text"
+                    labelText={TEXTS.inputNameLabel}
+                    error={error?.message}
+                    labelBGColor="beige"
+                    autoComplete="off"
+                  />
+                )
+              }}
+            />
 
-          <Controller
-            name="email"
-            control={control}
-            render={({ field, fieldState }) => {
-              const { error } = fieldState
+            <Controller
+              name="email"
+              control={control}
+              render={({ field, fieldState }) => {
+                const { error } = fieldState
 
-              return (
-                <Input
-                  {...field}
-                  type="text"
-                  labelText={TEXTS.inputEmailLabel}
-                  error={error?.message}
-                  labelBGColor="white"
-                  autoComplete="off"
-                />
-              )
-            }}
-          />
+                return (
+                  <Input
+                    {...field}
+                    type="text"
+                    labelText={TEXTS.inputEmailLabel}
+                    error={error?.message}
+                    labelBGColor="beige"
+                    autoComplete="off"
+                  />
+                )
+              }}
+            />
+          </fieldset>
 
           <Controller
             name="message"
@@ -127,7 +122,7 @@ const ReviewForm: FC<IReviewFormProps> = ({ closeModal }) => {
                   {...field}
                   labelText={TEXTS.textAreaMessageLabel}
                   error={error?.message}
-                  labelBGColor="white"
+                  labelBGColor="beige"
                 />
               )
             }}
@@ -136,7 +131,7 @@ const ReviewForm: FC<IReviewFormProps> = ({ closeModal }) => {
           <div className={styles.form__bottom}>
             <Button text={TEXTS.sendButton} type="submit" disabled={isSubmitButtonDisabled} isBordered />
 
-            <div className={styles.form__reCaptchaWrapper}>
+            <div>
               <ReCaptcha sitekey={envVars.RECAPTCHA_SITE_KEY} ref={captchaRef} onChange={handleRecaptchaChange} />
             </div>
           </div>
@@ -145,24 +140,9 @@ const ReviewForm: FC<IReviewFormProps> = ({ closeModal }) => {
         </form>
       )}
 
-      {isSuccess && (
-        <StatusScreen height={statusScreenHeigth}>
-          <div className={styles.successContent}>
-            <p className={styles.successContent__text}>{TEXTS.successMessage1}</p>
-            <p className={styles.successContent__text}>{TEXTS.successMessage2}</p>
-
-            <Button
-              text={TEXTS.finishButton}
-              disabled={isSubmitButtonDisabled}
-              className={styles.successContent__button}
-              onClick={closeModal}
-              isBordered
-            />
-          </div>
-        </StatusScreen>
-      )}
+      {isSuccess && <StatusScreen height={statusScreenHeigth}>{TEXTS.submitFormSuccess}</StatusScreen>}
     </>
   )
 }
 
-export default ReviewForm
+export default ContactForm
