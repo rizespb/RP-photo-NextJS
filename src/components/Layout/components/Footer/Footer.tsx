@@ -1,14 +1,21 @@
+import classNames from 'classnames'
 import { FC } from 'react'
 
 import { Icon, Link } from '@ui'
 
-import { contactsData } from './Footer.constants'
+import { contactsData, TEXTS } from './Footer.constants'
 import styles from './Footer.module.scss'
+import { IFooterProps } from './Footer.types'
 
-const Footer: FC = () => {
+const Footer: FC<IFooterProps> = ({ withInnerPaddings }) => {
+  const footerClasses = classNames({
+    [styles.footer]: true,
+    [styles['footer--paddings']]: withInnerPaddings,
+  })
+
   return (
-    <footer className={styles.footer}>
-      <span className={styles.footer__text}>Фотограф Катерина Петрова</span>
+    <footer className={footerClasses}>
+      <span className={styles.footer__text}>{TEXTS.label}</span>
 
       <div className={styles.contacts}>
         {contactsData.map((contact) => (

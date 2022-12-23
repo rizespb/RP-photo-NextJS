@@ -1,36 +1,22 @@
+import { ENavItems } from '@types'
+
 import { INavItem } from './Navigation.types'
 
-export const navItems: INavItem[] = [
+export const navItemsData: INavItem[] = [
   {
     id: 0,
-    link: '/menu0',
-    title: 'Меню 0',
+    subItems: [],
+    title: ENavItems.Portfolio,
   },
   {
     id: 1,
-    subItems: [
-      {
-        id: 10,
-        link: '/menu10',
-        title: 'Меню 10',
-      },
-      {
-        id: 11,
-        link: '/menu11',
-        title: 'Меню 11',
-      },
-      {
-        id: 12,
-        link: '/menu12',
-        title: 'Меню 12',
-      },
-    ],
-    title: 'Меню 1',
+    link: '/review',
+    title: ENavItems.Reviews,
   },
   {
     id: 2,
-    link: '/review',
-    title: 'Отзывы',
+    link: '/contacts',
+    title: 'Контакты',
   },
   {
     id: 3,
@@ -50,28 +36,44 @@ export const navItems: INavItem[] = [
         link: '/menu32',
         title: 'Меню 32',
       },
-      {
-        id: 33,
-        link: '/menu33',
-        title: 'Меню 33',
-      },
-      {
-        id: 34,
-        link: '/menu34',
-        title: 'Меню 34',
-      },
-      {
-        id: 35,
-        link: '/menu35',
-        title: 'Меню 35',
-      },
     ],
-    title: 'Меню 3',
+    title: 'Меню 3!!!',
   },
   {
     id: 4,
-    link: '/menu4',
-    title: 'Меню 4',
+    subItems: [
+      {
+        id: 40,
+        link: '/menu40',
+        title: 'Меню 40',
+      },
+      {
+        id: 41,
+        link: '/menu41',
+        title: 'Меню 41',
+      },
+      {
+        id: 42,
+        link: '/menu42',
+        title: 'Меню 42',
+      },
+      {
+        id: 43,
+        link: '/menu43',
+        title: 'Меню 43',
+      },
+      {
+        id: 44,
+        link: '/menu44',
+        title: 'Меню 44',
+      },
+      {
+        id: 45,
+        link: '/menu45',
+        title: 'Меню 45',
+      },
+    ],
+    title: 'Меню 4!!!',
   },
   {
     id: 5,
@@ -83,46 +85,4 @@ export const navItems: INavItem[] = [
     link: '/menu6',
     title: 'Меню 6',
   },
-  // {
-  //   id: 7,
-  //   subItems: [
-  //     {
-  //       id: 70,
-  //       link: '/menu70',
-  //       title: 'Меню 70',
-  //     },
-  //     {
-  //       id: 71,
-  //       link: '/menu71',
-  //       title: 'Меню 71',
-  //     },
-  //     {
-  //       id: 72,
-  //       link: '/menu72',
-  //       title: 'Меню 72',
-  //     },
-  //   ],
-  //   title: 'Меню 7',
-  // },
-  // {
-  //   id: 8,
-  //   subItems: [
-  //     {
-  //       id: 80,
-  //       link: '/menu80',
-  //       title: 'Меню 80',
-  //     },
-  //     {
-  //       id: 81,
-  //       link: '/menu81',
-  //       title: 'Меню 81',
-  //     },
-  //   ],
-  //   title: 'Меню 8',
-  // },
-  // {
-  //   id: 9,
-  //   link: '/menu9',
-  //   title: 'Меню 9',
-  // },
 ]

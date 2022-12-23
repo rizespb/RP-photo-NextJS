@@ -1,0 +1,68 @@
+@import '/src/styles/variables/colors.scss';
+@import '/src/styles/variables/text.scss';
+@import '/src/styles/variables/media.scss';
+@import '/src/styles/mixins/media.scss';
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  &__bottom {
+    position: relative;
+
+    @include respond-to(0, xs) {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__reCaptchaWrapper {
+    position: absolute;
+    top: -20px;
+    right: -45px;
+
+    transform: scale(0.7);
+
+    @include respond-to(0, xs) {
+      position: relative;
+      top: auto;
+      right: auto;
+
+      transform: scale(1);
+    }
+
+    & iframe {
+      width: 100%;
+    }
+  }
+
+  &__submitError {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    color: $color-font-error;
+  }
+}
+
+.successContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 30px;
+
+  &__text {
+    text-align: center;
+    font-family: $font-display;
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  &__button {
+    margin-top: 50px;
+  }
+}

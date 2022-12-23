@@ -1,0 +1,52 @@
+@import '/src/styles/variables/common.scss';
+@import '/src/styles/variables/layout.scss';
+@import '/src/styles/variables/media.scss';
+@import '/src/styles/mixins/media.scss';
+@import '/src/styles/mixins/hover.scss';
+
+$arrowOffset: 30px;
+
+.slider {
+  height: 100vh;
+
+  @include respond-to(0, md) {
+    height: calc(100vh - $header-height);
+  }
+}
+
+.slideImage {
+  &--cover {
+    object-fit: cover;
+  }
+
+  &--contain {
+    object-fit: contain;
+  }
+}
+
+.arrowIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  opacity: $slider-controls-opacity;
+
+  z-index: 10;
+  cursor: pointer;
+
+  @include any-hover {
+    opacity: $icons-opacity;
+  }
+
+  &:active {
+    opacity: $icons-opacity;
+  }
+
+  &--left {
+    left: $arrowOffset;
+  }
+
+  &--right {
+    right: $arrowOffset;
+  }
+}

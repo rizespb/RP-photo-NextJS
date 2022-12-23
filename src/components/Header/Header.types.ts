@@ -1,9 +1,10 @@
 import { EIcons } from '@constants'
+import { TStringOrElement } from '@types'
 
 export interface IHeaderProps {
-  title: string
-  description: string
-  buttonText?: string
+  title: TStringOrElement
+  description: TStringOrElement
+  buttonText?: TStringOrElement
   onButtonClick?: () => void
   buttonIcon?: EIcons
 }

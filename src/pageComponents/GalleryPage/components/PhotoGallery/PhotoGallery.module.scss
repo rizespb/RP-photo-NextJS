@@ -1,0 +1,41 @@
+@import '/src/styles/variables/media.scss';
+@import '/src/styles/mixins/media.scss';
+@import '/src/styles/extends/text.scss';
+
+$offset: 15px;
+
+.gallery {
+  column-count: 3;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-gap: $offset;
+
+  @extend %user-select-none;
+
+  @include respond-to(xs, md) {
+    column-count: 2;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+  }
+
+  @include respond-to(0, xs) {
+    column-count: 1;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+  }
+
+  &__photoWrapper {
+    position: relative;
+
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: $offset;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: auto;
+  }
+}

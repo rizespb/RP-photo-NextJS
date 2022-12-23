@@ -1,0 +1,12 @@
+.wrapper {
+  animation: 1.5s appearance ease;
+}
+
+@keyframes appearance {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

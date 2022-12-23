@@ -1,6 +1,10 @@
 @import '/src/styles/variables/layout.scss';
 @import '/src/styles/variables/text.scss';
 @import '/src/styles/variables/colors.scss';
+@import '/src/styles/variables/media.scss';
+@import '/src/styles/mixins/media.scss';
+@import '/src/styles/mixins/hide-scrollBar.scss';
+@import '/src/styles/extends/text.scss';
 
 .container {
   display: block;
@@ -18,9 +22,65 @@
   height: 100vh;
   padding: 40px 10px 0 40px;
 
+  background-color: $color-bg-menu;
   overflow: hidden;
+  transition: all 0.5s;
 
-  z-index: 100;
+  z-index: 10;
+
+  @include respond-to(0, md) {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: auto;
+    height: $header-height;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+  }
+}
+
+.navigationWrapper {
+  overflow-y: auto;
+
+  background-color: $color-bg-menu;
+
+  @include hide-scrollBar;
+
+  @include respond-to(0, md) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.5s;
+  }
+
+  &--opened {
+    @include respond-to(0, md) {
+      right: 0;
+      width: 100vw;
+    }
+  }
+}
+
+@keyframes scaleFromZero {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .logo {
@@ -39,22 +99,69 @@
   letter-spacing: initial;
 
   font-size: 40px;
+
+  @include respond-to(0, md) {
+    font-size: 25px;
+    margin-bottom: 0;
+  }
 }
 
 .subtitle {
   font-size: 25px;
+
+  @include respond-to(0, md) {
+    display: none;
+  }
+}
+
+.menuButtonWrapper {
+  display: none;
+
+  z-index: 10;
+
+  @include respond-to(0, md) {
+    display: inline-block;
+  }
 }
 
 .right {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-left: $menu-width;
-  padding: 40px 50px;
   min-height: 100vh;
 
   background-color: $colog-bg-primary;
+
+  &--paddings {
+    padding: 40px 50px 0;
+
+    @include respond-to(0, md) {
+      padding: 20px 20px 0;
+    }
+  }
+
+  @include respond-to(0, md) {
+    margin-left: 0;
+  }
 }
 
 .content {
   flex-grow: 1;
+}
+
+.upButtonWrapper {
+  position: fixed;
+
+  bottom: 10px;
+  left: 40px;
+
+  z-index: 10;
+
+  @extend %user-select-none;
+
+  @include respond-to(0, md) {
+    left: auto;
+    right: 40px;
+  }
 }

@@ -15,7 +15,7 @@ const Header: FC<IHeaderProps> = (props) => {
         <span className={styles.header__description}>{description}</span>
       </div>
 
-      {buttonText && <Button text={buttonText} onClick={onButtonClick} icon={buttonIcon} />}
+      {buttonText && <Button text={buttonText} onClick={onButtonClick} icon={buttonIcon} className={styles.button} />}
     </div>
   )
 }

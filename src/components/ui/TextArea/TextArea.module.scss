@@ -1,0 +1,91 @@
+@import '/src/styles/variables/colors.scss';
+@import '/src/styles/variables/text.scss';
+@import '/src/styles/mixins/texts.scss';
+@import '/src/styles/extends/form.scss';
+
+$error-block-heigth: 19px;
+
+$textArea-padding-top: 15px;
+
+.wrapper {
+  position: relative;
+
+  padding-bottom: calc($error-block-heigth + 3px);
+}
+
+.textArea {
+  width: 100%;
+  padding: $textArea-padding-top 10px;
+  border: none;
+  border: 1px solid transparent;
+  border-bottom: 1px solid $color-borders;
+  outline: none;
+  resize: none;
+  background: transparent;
+
+  font-family: $font-primary;
+  font-size: 16px;
+
+  transition: all 0.3s;
+
+  &:focus {
+    border: 1px solid $color-borders-focus;
+    outline: none;
+  }
+
+  &--error {
+    border: 1px solid $color-borders-error;
+  }
+
+  @extend %noAutofillBackground;
+}
+
+.label {
+  position: relative;
+  display: block;
+}
+
+.labelText {
+  position: absolute;
+  padding: 4px;
+
+  transition: all 0.3s;
+
+  &--centered {
+    left: 10px;
+    top: $textArea-padding-top;
+  }
+
+  &--top {
+    left: 7px;
+    top: 0;
+    transform: translateY(-50%) scale(0.7);
+    color: $color-borders-focus;
+  }
+
+  &--error {
+    color: $color-font-error;
+  }
+
+  &--bgWhite {
+    background-color: $color-modal-bg;
+  }
+
+  &--bgBeige {
+    background-color: $colog-bg-primary;
+  }
+}
+
+.error {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: $error-block-heigth;
+  padding: 5px 10px 0;
+  color: $color-font-error;
+
+  @include textEllipsis(1);
+}

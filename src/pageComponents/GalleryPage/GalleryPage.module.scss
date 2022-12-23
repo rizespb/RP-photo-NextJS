@@ -1,0 +1,37 @@
+@import '/src/styles/variables/common.scss';
+@import '/src/styles/mixins/hover.scss';
+
+.modalContentArea {
+  width: 100%;
+
+  span {
+    opacity: $slider-controls-opacity;
+  }
+}
+
+.contentWrapper {
+  flex: 1;
+  max-width: 100%;
+}
+
+.slider {
+  height: 90vh;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  opacity: $slider-controls-opacity;
+  cursor: pointer;
+  z-index: 10;
+
+  @include any-hover {
+    opacity: $icons-opacity;
+  }
+
+  &:active {
+    opacity: $icons-opacity;
+  }
+}

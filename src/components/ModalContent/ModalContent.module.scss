@@ -1,0 +1,36 @@
+@import '/src/styles/variables/colors.scss';
+@import '/src/styles/variables/common.scss';
+@import '/src/styles/mixins/hover.scss';
+@import '/src/styles/mixins/hide-scrollBar.scss';
+
+.modalContent {
+  position: relative;
+
+  width: 100vw;
+  max-width: 650px;
+  max-height: 100vh;
+  overflow-y: auto;
+
+  padding: 70px 50px 50px;
+
+  background-color: $color-modal-bg;
+
+  @include hide-scrollBar();
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  cursor: pointer;
+  z-index: 10;
+
+  @include any-hover {
+    opacity: $icons-opacity;
+  }
+
+  &:active {
+    opacity: $icons-opacity;
+  }
+}

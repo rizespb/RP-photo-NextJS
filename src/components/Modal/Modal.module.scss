@@ -1,37 +1,45 @@
-@import '/src/styles/mixins/filter.scss';
 @import '/src/styles/variables/colors.scss';
+@import '/src/styles/variables/common.scss';
+@import '/src/styles/variables/layout.scss';
+@import '/src/styles/variables/media.scss';
+@import '/src/styles/mixins/media.scss';
+@import '/src/styles/mixins/filter.scss';
 
 .container {
   position: fixed;
   top: 0;
-  left: 0;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  min-width: 100vw;
-  min-height: 100vh;
-  padding: 50px;
+  height: 100vh;
+  padding: 0 30px;
 
-  z-index: 1000;
+  overflow: hidden;
+
   background-color: $color-modal-container-bg;
+  z-index: 100;
 
-  @include blur(2px);
+  @include blur(5px);
+
+  &--fullscreen {
+    left: 0;
+    width: 100vw;
+  }
+
+  &--rightSide {
+    left: $menu-width;
+    width: calc(100vw - $menu-width);
+
+    @include respond-to(0, md) {
+      left: 0;
+      width: 100vw;
+      padding: 0;
+    }
+  }
 }
 
-.modal {
+.contentWrapper {
   position: relative;
-  padding: 70px 50px;
-  width: 650px;
-
-  background-color: $color-modal-bg;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-
-  cursor: pointer;
 }

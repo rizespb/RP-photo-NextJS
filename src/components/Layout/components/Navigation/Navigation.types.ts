@@ -1,6 +1,8 @@
+import { ENavItems } from '@types'
+
 export interface INavItem {
   id: number
-  title: string
+  title: ENavItems | string
   link?: string
   subItems?: INavItem[]
 }

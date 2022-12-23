@@ -1,20 +1,44 @@
 @import '/src/styles/variables/text.scss';
+@import '/src/styles/variables/common.scss';
+@import '/src/styles/variables/colors.scss';
+@import '/src/styles/extends/text.scss';
+@import '/src/styles/mixins/hover.scss';
 
 .button {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   height: 40px;
+  padding: 5px 10px;
   border: none;
   background: transparent;
 
   line-height: 20px;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
 
   cursor: pointer;
 
-  &:hover,
+  @extend %user-select-none;
+
+  @include any-hover {
+    opacity: $icons-opacity;
+  }
+
   &:active {
-    opacity: 0.7;
+    opacity: $icons-opacity;
+  }
+
+  &:disabled {
+    opacity: $icons-opacity;
+    cursor: default;
+  }
+
+  &--bordered {
+    border: 1px solid $color-button-borders;
+
+    &:disabled {
+      border-color: $color-button-disabled-borders;
+    }
   }
 }
 

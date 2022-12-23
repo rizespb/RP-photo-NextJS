@@ -1,0 +1,27 @@
+@import '/src/styles/variables/colors.scss';
+
+$gap: 15px;
+
+.form {
+  position: relative;
+
+  &__credentials {
+    display: flex;
+    flex-direction: column;
+    row-gap: $gap;
+    max-width: 500px;
+    margin-bottom: $gap;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    margin-top: $gap;
+  }
+
+  &__submitError {
+    margin-top: 10px;
+    color: $color-font-error;
+  }
+}

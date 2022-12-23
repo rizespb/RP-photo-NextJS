@@ -1,0 +1,65 @@
+@import '/src/styles/variables/text.scss';
+@import '/src/styles/variables/media.scss';
+@import '/src/styles/mixins/media.scss';
+
+.review {
+  display: flex;
+  gap: 30px;
+
+  &--imageLeft {
+    flex-direction: row-reverse;
+  }
+
+  @include respond-to(0, sm) {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+
+  flex-basis: 50%;
+
+  @include respond-to(0, sm) {
+    gap: 15px;
+  }
+
+  &__title {
+    margin-top: 20px;
+    font-size: 25px;
+  }
+
+  &__text {
+    line-height: 30px;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    font-family: $font-display;
+    font-size: 25px;
+    font-weight: 500;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  flex-basis: 50%;
+  height: 330px;
+
+  @include respond-to(0, sm) {
+    flex-direction: column;
+    flex-basis: auto;
+    order: -1;
+  }
+}
+
+.image {
+  object-fit: cover;
+  object-position: top;
+}
